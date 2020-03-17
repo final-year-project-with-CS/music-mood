@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title> Music Mood</title>
+    [<!doctype html>
+    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+        <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <title> Music Mood</title>
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- CSRF Token -->
-  <meta name="_token" content="6Syd2Vq8EGzU5zzaEnLRJfKR9P0C2BBassKf6Szo">
+            <!-- CSRF Token -->
+            <meta name="_token" content="6Syd2Vq8EGzU5zzaEnLRJfKR9P0C2BBassKf6Szo">
 
-  <link rel="shortcut icon" href="favicon.ico">
+            <link rel="shortcut icon" href="favicon.ico">
 
-  <!-- plugin css -->
-  <link media="all" type="text/css" rel="stylesheet" href="assets\fonts\feather-font\css\iconfont.css">
-  <link media="all" type="text/css" rel="stylesheet" href="assets\plugins\perfect-scrollbar\perfect-scrollbar.css">
-  <!-- end plugin css -->
+            <!-- plugin css -->
+            <link media="all" type="text/css" rel="stylesheet" href="assets\fonts\feather-font\css\iconfont.css">
+            <link media="all" type="text/css" rel="stylesheet" href="assets\plugins\perfect-scrollbar\perfect-scrollbar.css">
+            <!-- end plugin css -->
 
-    <link media="all" type="text/css" rel="stylesheet" href="assets\plugins\bootstrap-datepicker\css\bootstrap-datepicker.min.css">
+              <link media="all" type="text/css" rel="stylesheet" href="assets\plugins\bootstrap-datepicker\css\bootstrap-datepicker.min.css">
 
-  <!-- common css -->
-  <link media="all" type="text/css" rel="stylesheet" href="css\app.css">
-  <!-- end common css -->
+            <!-- common css -->
+            <link media="all" type="text/css" rel="stylesheet" href="css\app.css">
+            <!-- end common css -->
 
 
-  <!-- Global site tag (gtag.js) - Google Analytics start -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-146586338-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+            <!-- Global site tag (gtag.js) - Google Analytics start -->
+            <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-146586338-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
 
-    gtag('config', 'UA-146586338-1');
-  </script>
-  <!-- Google Analytics end -->
+              gtag('config', 'UA-146586338-1');
+            </script>
+            <!-- Google Analytics end -->
 
-</head>
+            @yield('styles')
+
+          </head>
+
+    </html>
+
 <body data-base-url="https://www.nobleui.com/laravel/template/dark">
 
   <script src="assets\js\spinner.js"></script>
@@ -63,20 +70,20 @@
       <li class="nav-item nav-category">MUSIC MOOD</li>
 
       <li class="nav-item ">
-        <a href="#" class="nav-link">
+        <a href="/browse" class="nav-link">
           <i class="link-icon" data-feather="globe"></i>
           <span class="link-title">Browse</span>
         </a>
       </li>
       <li class="nav-item ">
-        <a href="#" class="nav-link">
+        <a href="/radio" class="nav-link">
           <i class="link-icon" data-feather="radio"></i>
           <span class="link-title">Radio</span>
         </a>
       </li>
       <li class="nav-item nav-category">LIBRARY</li>
       <li class="nav-item ">
-        <a class="nav-link" data-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">
+        <a href="/recentlyadded" class="nav-link"  >
           <i class="link-icon" data-feather="clock"></i>
           <span class="link-title">Recently Added</span>
 
@@ -84,7 +91,7 @@
 
       </li>
       <li class="nav-item ">
-        <a class="nav-link" data-toggle="collapse" href="#advanced-ui" role="button" aria-expanded="false" aria-controls="advanced-ui">
+        <a href="/artist" class="nav-link"  >
           <i class="link-icon" data-feather="user"></i>
           <span class="link-title">Artists</span>
 
@@ -92,7 +99,7 @@
 
       </li>
       <li class="nav-item ">
-        <a class="nav-link" data-toggle="collapse" href="#forms" role="button" aria-expanded="false" aria-controls="forms">
+        <a href="/album" class="nav-link"  >
           <i class="link-icon" data-feather="music"></i>
           <span class="link-title">Albums</span>
 
@@ -100,7 +107,7 @@
 
       </li>
       <li class="nav-item ">
-        <a class="nav-link" data-toggle="collapse" href="#charts" role="button" aria-expanded="false" aria-controls="charts">
+        <a href="/song" class="nav-link"  >
           <i class="link-icon" data-feather="music"></i>
           <span class="link-title">Songs</span>
 
@@ -114,31 +121,31 @@
 
       <li class="nav-item nav-category">STORE</li>
       <li class="nav-item ">
-        <a class="nav-link" data-toggle="collapse" href="#advanced-ui" role="button" aria-expanded="false" aria-controls="advanced-ui">
+        <a href="/upload" class="nav-link"  >
           <i class="link-icon" data-feather="upload-cloud"></i>
           <span class="link-title">Upload</span>
 
         </a>
         <li class="nav-item ">
-            <a class="nav-link" data-toggle="collapse" href="#advanced-ui" role="button" aria-expanded="false" aria-controls="advanced-ui">
+            <a href="/download" class="nav-link"  >
               <i class="link-icon" data-feather="download"></i>
               <span class="link-title">Download</span>
 
             </a>
             <li class="nav-item ">
-                <a class="nav-link" data-toggle="collapse" href="#advanced-ui" role="button" aria-expanded="false" aria-controls="advanced-ui">
+                <a href="/claimpayment" class="nav-link"  >
                   <i class="link-icon" data-feather="dollar-sign"></i>
                   <span class="link-title">Claim Payment</span>
 
                 </a>
                 <li class="nav-item ">
-                    <a class="nav-link" data-toggle="collapse" href="#advanced-ui" role="button" aria-expanded="false" aria-controls="advanced-ui">
+                    <a href="/notify" class="nav-link"  >
                       <i class="link-icon" data-feather="bell"></i>
                       <span class="link-title">Notify</span>
 
                     </a>
                     <li class="nav-item ">
-                        <a class="nav-link" data-toggle="collapse" href="#advanced-ui" role="button" aria-expanded="false" aria-controls="advanced-ui">
+                        <a href="/verify" class="nav-link"  >
                           <i class="link-icon" data-feather="check"></i>
                           <span class="link-title">Verify</span>
 

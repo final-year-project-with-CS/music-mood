@@ -83,7 +83,7 @@
       </li>
       <li class="nav-item nav-category">LIBRARY</li>
       <li class="nav-item ">
-        <a href="/recentlyadded" class="nav-link">
+        <a href="/recentlyadded" class="nav-link"  >
           <i class="link-icon" data-feather="clock"></i>
           <span class="link-title">Recently Added</span>
 
@@ -91,7 +91,7 @@
 
       </li>
       <li class="nav-item ">
-        <a href="/artist" class="nav-link">
+        <a href="/artist" class="nav-link"  >
           <i class="link-icon" data-feather="user"></i>
           <span class="link-title">Artists</span>
 
@@ -99,7 +99,7 @@
 
       </li>
       <li class="nav-item ">
-        <a href="/album" class="nav-link">
+        <a href="/album" class="nav-link"  >
           <i class="link-icon" data-feather="music"></i>
           <span class="link-title">Albums</span>
 
@@ -107,7 +107,7 @@
 
       </li>
       <li class="nav-item ">
-        <a href="/song" class="nav-link">
+        <a href="/song" class="nav-link"  >
           <i class="link-icon" data-feather="music"></i>
           <span class="link-title">Songs</span>
 
@@ -121,31 +121,31 @@
 
       <li class="nav-item nav-category">STORE</li>
       <li class="nav-item ">
-        <a href="/upload" class="nav-link">
+        <a href="/upload" class="nav-link"  >
           <i class="link-icon" data-feather="upload-cloud"></i>
           <span class="link-title">Upload</span>
 
         </a>
         <li class="nav-item ">
-            <a href="/download" class="nav-link">
+            <a href="/download" class="nav-link"  >
               <i class="link-icon" data-feather="download"></i>
               <span class="link-title">Download</span>
 
             </a>
             <li class="nav-item ">
-                <a href="/claimpayment" class="nav-link">
+                <a href="/claimpayment" class="nav-link"  >
                   <i class="link-icon" data-feather="dollar-sign"></i>
                   <span class="link-title">Claim Payment</span>
 
                 </a>
                 <li class="nav-item ">
-                    <a href="/notify" class="nav-link">
+                    <a href="/notify" class="nav-link"  >
                       <i class="link-icon" data-feather="bell"></i>
                       <span class="link-title">Notify</span>
 
                     </a>
                     <li class="nav-item ">
-                        <a href="/verify" class="nav-link">
+                        <a href="/verify" class="nav-link"  >
                           <i class="link-icon" data-feather="check"></i>
                           <span class="link-title">Verify</span>
 
@@ -407,7 +407,7 @@
 </nav>      <div class="page-content">
         <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
   <div>
-    <h4 class="mb-3 mb-md-0">Welcome to Browse</h4>
+    <h4 class="mb-3 mb-md-0">Welcome to Dashboard</h4>
   </div>
   <div class="d-flex align-items-center flex-wrap text-nowrap">
     <div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex" id="dashboardDate">
@@ -428,63 +428,6 @@
     </button>
   </div>
 </div>
-<div class="card-deck">
-    <div class="card">
-    <img class="card-img-top img-fluid" src="#" alt="image" />
-    <div class="card-body">
-    <h3 class="card-title">Person Name</h3>
-    <p class="card-text">This is a true weapon</p>
-    <button class="btn btn-primary">View Profile</button>
-    </div>
-</div>
-    <div class="card">
-        <img class="card-img-top img-fluid" src="#" alt="image" />
-<div class="card-body">
-<h3 class="card-title">Person Name</h3>
-<p class="card-text">This is an example text</p>
-<button class="btn btn-primary">View Profile</button>
-</div>
-    </div>
-    <div class="card">
-        <img class="card-img-top img-fluid" src="#" alt="image" />
-<div class="card-body">
-<h3 class="card-title">Person Name</h3>
-<p class="card-text">This is an example text</p>
-<button class="btn btn-primary">View Profile</button>
-</div>
-    </div>
-  </div>
-  <div>
-    <div class="row">
-        <h4 class="mb-3 mb-md-0">New realease</h4>
-    </div>
-  </div>
-  <div class="card-deck">
-    <div class="card">
-    <img class="card-img-top img-fluid" src="#" alt="image" />
-    <div class="card-body">
-    <h3 class="card-title">Person Name</h3>
-    <p class="card-text">This is a true weapon</p>
-    <button class="btn btn-primary">View Profile</button>
-    </div>
-</div>
-    <div class="card">
-        <img class="card-img-top img-fluid" src="#" alt="image" />
-<div class="card-body">
-<h3 class="card-title">Person Name</h3>
-<p class="card-text">This is an example text</p>
-<button class="btn btn-primary">View Profile</button>
-</div>
-    </div>
-    <div class="card">
-        <img class="card-img-top img-fluid" src="#" alt="image" />
-<div class="card-body">
-<h3 class="card-title">Person Name</h3>
-<p class="card-text">This is an example text</p>
-<button class="btn btn-primary">View Profile</button>
-</div>
-    </div>
-  </div>
 
 
 
@@ -502,19 +445,11 @@
 
 
 
-
-
-
-
-
-
-
-
-      {{-- <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
   <p class="text-muted text-center text-md-left">Copyright © 2019 <a href="https://www.nobleui.com" target="_blank">NobleUI</a>. All rights reserved</p>
   <p class="text-muted text-center text-md-left mb-0 d-none d-md-block">Handcrafted With <i class="mb-1 text-primary ml-1 icon-small" data-feather="heart"></i></p>
 </footer>    </div>
-  </div> --}}
+  </div>
 
     <!-- base js -->
     <script src="js\app.js"></script>
