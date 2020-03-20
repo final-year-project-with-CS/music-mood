@@ -27,16 +27,9 @@
 
 
     <!-- Global site tag (gtag.js) - Google Analytics start -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-146586338-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'UA-146586338-1');
-    </script>
     <!-- Google Analytics end -->
-
+@yield('styles')
 </head>
 <body id="page-top">
 
@@ -50,12 +43,9 @@
         {{session('msg')}}</div>
     @endif
 
-
-
-</head>
 <body data-base-url="#">
 
-  <script src="assets\js\spinner.js"></script>
+
 
   <div class="main-wrapper" id="app">
     <nav class="sidebar">
@@ -333,6 +323,7 @@
     </ul>
   </div>
 </nav>
+
    <div class="page-content">
         <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
   <div>
@@ -356,12 +347,12 @@
       Download Report
     </button>
   </div>
+
 </div>
+@yield('contents')
 </div>
 
 
-
-    @yield('contents')
 <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
     <p class="text-muted text-center text-md-left">Copyright © 2020 <a href="#"
             target="_blank">Music_Mood</a>. All rights reserved</p>
@@ -390,7 +381,18 @@
 <!-- end common js -->
 
 <script src="assets\js\dashboard.js"></script>
+<script src="assets\js\spinner.js"></script>
 <script src="assets\js\datepicker.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-146586338-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146586338-1');
+    </script>
+
+    @yield('scripts')
 </body>
 
 </html>
