@@ -4,7 +4,7 @@
     <div class="card">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-baseline mb-2">
-          <h6 class="card-title mb-0">Projects</h6>
+          <h6 class="card-title mb-0">SONGS</h6>
           <div class="dropdown mb-2">
             <button class="btn p-0" type="button" id="dropdownMenuButton7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -27,7 +27,8 @@
                 <th class="pt-0">Time</th>
                 <th class="pt-0">Artist</th>
                 <th class="pt-0">Album</th>
-                <th class="pt-0">Assign</th>
+                <th class="pt-0">Genre</th>
+                <th class="pt-0">Plays</th>
               </tr>
             </thead>
             <tbody>
@@ -94,7 +95,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
 @endsection
 

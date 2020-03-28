@@ -92,6 +92,8 @@
                   <p class="text-muted tx-13">Hey! there I'm available...</p>
                 </div>
               </a>
+
+
           </div>
         </div>
       </div>
