@@ -24,7 +24,7 @@
               <div class="mr-3">
                 <img src="assets\images\faces\face2.jpg" class="rounded-circle wd-35" alt="user">
               </div>
-              <div class="w-100">
+              <div class="w-100" data-toggle="popover" title="popover" data-content="hello popover">
                 <div class="d-flex justify-content-between">
                   <h6 class="text-body mb-2">Leonardo Payne</h6>
                   <p class="text-muted tx-12">12.30 PM</p>
