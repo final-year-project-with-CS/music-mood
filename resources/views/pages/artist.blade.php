@@ -24,7 +24,7 @@
               <div class="mr-3">
                 <img src="assets\images\faces\face2.jpg" class="rounded-circle wd-35" alt="user">
               </div>
-              <div class="w-100" data-toggle="popover" title="popover" data-content="hello popover">
+              <div class="w-100 artist" data-artist="leonardo payne">
                 <div class="d-flex justify-content-between">
                   <h6 class="text-body mb-2">Leonardo Payne</h6>
                   <p class="text-muted tx-12">12.30 PM</p>
@@ -36,7 +36,7 @@
               <div class="mr-3">
                 <img src="assets\images\faces\face3.jpg" class="rounded-circle wd-35" alt="user">
               </div>
-              <div class="w-100">
+              <div class="w-100 artist" data-artist="carl Henson">
                 <div class="d-flex justify-content-between">
                   <h6 class="text-body mb-2">Carl Henson</h6>
                   <p class="text-muted tx-12">02.14 AM</p>
@@ -48,7 +48,7 @@
               <div class="mr-3">
                 <img src="assets\images\faces\face4.jpg" class="rounded-circle wd-35" alt="user">
               </div>
-              <div class="w-100">
+              <div class="w-100 artist" data-artist="Jensen Combs">
                 <div class="d-flex justify-content-between">
                   <h6 class="text-body mb-2">Jensen Combs</h6>
                   <p class="text-muted tx-12">08.22 PM</p>
@@ -60,7 +60,7 @@
               <div class="mr-3">
                 <img src="assets\images\faces\face5.jpg" class="rounded-circle wd-35" alt="user">
               </div>
-              <div class="w-100">
+              <div class="w-100 artist" data-artist="Amiah Burton">
                 <div class="d-flex justify-content-between">
                   <h6 class="text-body mb-2">Amiah Burton</h6>
                   <p class="text-muted tx-12">05.49 AM</p>
@@ -72,7 +72,7 @@
               <div class="mr-3">
                 <img src="assets\images\faces\face6.jpg" class="rounded-circle wd-35" alt="user">
               </div>
-              <div class="w-100">
+              <div class="w-100 artist" data-artist="Yeretzi Mayo">
                 <div class="d-flex justify-content-between">
                   <h6 class="text-body mb-2">Yaretzi Mayo</h6>
                   <p class="text-muted tx-12">01.19 AM</p>
@@ -84,7 +84,7 @@
                 <div class="mr-3">
                   <img src="assets\images\faces\face2.jpg" class="rounded-circle wd-35" alt="user">
                 </div>
-                <div class="w-100">
+                <div class="w-100 artist" data-artist="Yaretzi Mayo">
                   <div class="d-flex justify-content-between">
                     <h6 class="text-body mb-2">Yaretzi Mayo</h6>
                     <p class="text-muted tx-12">01.19 AM</p>
@@ -99,8 +99,57 @@
       </div>
     </div>
 
+    <div class="col" id="hide" style="display:none">
+        <div class="card">
+            <div class="card-header">
+                <h1 id="artist"></h1>
+            </div>
+            <div class="card-body">
+                Songs
+                <table class="table w-100">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Album</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>NobleUI</td>
+                        <td>Released</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>NobleUI</td>
+                        <td>Released</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>NobleUI</td>
+                        <td>Released</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>NobleUI</td>
+                        <td>Released</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
 
   </div>
 @endsection
 
 @section('scripts')
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('.artist').forEach((div) => {
+              div.onclick = () => {
+                  document.querySelector('#hide').style.display = 'block';
+                  document.querySelector('#artist').innerHTML = div.dataset.artist;
+              }
+          });
+      });
+  </script>
+@endsection
