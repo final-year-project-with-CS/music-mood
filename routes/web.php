@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,10 +45,10 @@ Route::get('/artist', function () {
 Route::get('/album', function () {
     return view('pages.album');
 });
-
-Route::get('/song', function () {
-    return view('pages.song');
-});
+   Route::get('song','PagesController@song');
+// Route::get('/song', function () {
+//     return view('pages.song');
+// });
 
 Route::get('/upload', function () {
     return view('pages.upload');
@@ -67,6 +68,12 @@ Route::get('/verify', function () {
 
 Route::get('/notify', function () {
     return view('pages.notify');
+});
+Route::get('/login', function () {
+    return view('pages.login');
+});
+Route::get('/profile', function () {
+    return view('pages.profile');
 });
 
 

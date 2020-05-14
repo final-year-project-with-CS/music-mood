@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('contents')
-<div class="col-lg-7 col-xl-8 stretch-card">
+<div class="col-lg-12 col-xl-12 stretch-card">
     <div class="card">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-baseline mb-2">
@@ -19,6 +19,7 @@
           </div>
         </div>
         <div class="table-responsive">
+            @if(count($songs) > 0)
           <table class="table table-hover mb-0">
             <thead>
               <tr>
@@ -32,15 +33,19 @@
               </tr>
             </thead>
             <tbody>
+                @foreach ($songs as $song)
+
               <tr>
-                <td>1</td>
-                <td>NobleUI jQuery</td>
-                <td>01/01/2019</td>
-                <td>26/04/2019</td>
-                <td><span class="badge badge-danger">Released</span></td>
-                <td>Leonardo Payne</td>
+                <td>{{$song->id}}</td>
+                <td>{{$song->name}}</td>
+                <td>{{$song->time}}</td>
+                <td>{{$song->artist}}</td>
+                <td>{{$song->album}}</td>
+                <td>{{$song->genre}}</td>
+                <td>{{$song->play}}</td>
               </tr>
-              <tr>
+              @endforeach
+              {{-- <tr>
                 <td>2</td>
                 <td>NobleUI Angular</td>
                 <td>01/01/2019</td>
@@ -88,9 +93,12 @@
                 <td class="border-bottom">10/11/2019</td>
                 <td class="border-bottom"><span class="badge badge-info-muted">Pending</span></td>
                 <td class="border-bottom">Jensen Combs</td>
-              </tr>
+              </tr> --}}
             </tbody>
           </table>
+          @else
+          <p>songs not found </p>
+          @endif
         </div>
       </div>
     </div>
