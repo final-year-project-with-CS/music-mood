@@ -11,8 +11,9 @@ $factory->define(Song::class, function (Faker $faker) {
         'name' => $faker->name,
         'time' => $faker->randomDigit,
         'artist' => $faker->name,
-        'album' => $faker->name,
+        'album' => $faker->word,
         'genre' => $faker->name,
-        'play' => $faker->randomDigit,
+        'plays' => $faker->randomDigit
+
     ];
 });

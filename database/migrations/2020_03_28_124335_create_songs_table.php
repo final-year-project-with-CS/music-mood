@@ -20,7 +20,7 @@ class CreateSongsTable extends Migration
             $table->string('artist');
             $table->string('album');
             $table->string('genre');
-            $table->string('play');
+            $table->string('plays');
             $table->timestamps();
         });
     }

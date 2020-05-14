@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('contents')
-<div class="col-lg-12 col-xl-12 stretch-card">
+<div class="col-lg-12 col-xl-8 stretch-card">
     <div class="card">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-baseline mb-2">
@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="table-responsive">
-            @if(count($songs) > 0)
+          @if(count($songs) > 0)
           <table class="table table-hover mb-0">
             <thead>
               <tr>
@@ -33,18 +33,24 @@
               </tr>
             </thead>
             <tbody>
-                @foreach ($songs as $song)
-
+              @foreach ($songs as $song)
               <tr>
-                <td>{{$song->id}}</td>
-                <td>{{$song->name}}</td>
-                <td>{{$song->time}}</td>
-                <td>{{$song->artist}}</td>
-                <td>{{$song->album}}</td>
-                <td>{{$song->genre}}</td>
-                <td>{{$song->play}}</td>
+              <td>{{ $song->id }}</td>
+              <td>{{ $song->name }}</td>
+              <td>{{ $song->time }}</td>
+              <td>{{ $song->artist }}</td>
+              <td>{{ $song->album }}</td>
+              <td>{{ $song->genre }}</td>
+              <td>{{ $song->plays }}</td>
               </tr>
               @endforeach
+
+            </tbody>
+          </table>
+          @else
+            <p>Songs not found</p>
+          @endif
+
               {{-- <tr>
                 <td>2</td>
                 <td>NobleUI Angular</td>
@@ -85,8 +91,8 @@
                 <td>31/12/2019</td>
                 <td><span class="badge badge-primary">Coming soon</span></td>
                 <td>Carl Henson</td>
-              </tr>
-              <tr>
+              </tr> --}}
+              {{-- <tr>
                 <td class="border-bottom">3</td>
                 <td class="border-bottom">NobleUI EmberJs</td>
                 <td class="border-bottom">01/05/2019</td>
@@ -94,11 +100,6 @@
                 <td class="border-bottom"><span class="badge badge-info-muted">Pending</span></td>
                 <td class="border-bottom">Jensen Combs</td>
               </tr> --}}
-            </tbody>
-          </table>
-          @else
-          <p>songs not found </p>
-          @endif
         </div>
       </div>
     </div>

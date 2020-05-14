@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Song;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,10 +46,13 @@ Route::get('/artist', function () {
 Route::get('/album', function () {
     return view('pages.album');
 });
-   Route::get('song','PagesController@song');
+
 // Route::get('/song', function () {
 //     return view('pages.song');
 // });
+
+Route::get('song', 'Pagescontroller@song');
+
 
 Route::get('/upload', function () {
     return view('pages.upload');
