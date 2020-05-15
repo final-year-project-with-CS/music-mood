@@ -16,9 +16,13 @@
           </div>
           <div class="col-md-8 pl-md-0">
             <div class="auth-form-wrapper px-4 py-5">
-              <a href="#" class="noble-ui-logo logo-light d-block mb-2">LOG<span>IN</span></a>
-              <h5 class="text-muted font-weight-normal mb-4">Welcome back! Log in to your account.</h5>
+              <a href="#" class="noble-ui-logo logo-light d-block mb-2">Noble<span>UI</span></a>
+              <h5 class="text-muted font-weight-normal mb-4">Create a free account.</h5>
               <form class="forms-sample">
+                <div class="form-group">
+                  <label for="exampleInputUsername1">Username</label>
+                  <input type="text" class="form-control" id="exampleInputUsername1" autocomplete="Username" placeholder="Username">
+                </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
@@ -34,13 +38,13 @@
                   </label>
                 </div>
                 <div class="mt-3">
-                  <a href="#" class="btn btn-primary mr-2 mb-2 mb-md-0">Login</a>
+                  <a href="https://www.nobleui.com/laravel/template/dark" class="btn btn-primary mr-2 mb-2 mb-md-0">Sing up</a>
                   <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
                     <i class="btn-icon-prepend" data-feather="twitter"></i>
-                    Login with twitter
+                    Sign up with twitter
                   </button>
                 </div>
-                <a href="/register" class="d-block mt-3 text-muted">Not a user? Sign up</a>
+                <a href="/login" class="d-block mt-3 text-muted">Already a user? Sign in</a>
               </form>
             </div>
           </div>

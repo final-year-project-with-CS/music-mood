@@ -79,5 +79,11 @@ Route::get('/login', function () {
 Route::get('/profile', function () {
     return view('pages.profile');
 });
+Route::get('/editprofile', function () {
+    return view('pages.editprofile');
+});
+Route::get('/register', function () {
+    return view('pages.register');
+});
 
 
