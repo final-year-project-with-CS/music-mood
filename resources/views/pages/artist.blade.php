@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('contents')
 <div class="row">
+    {{-- artist name and pics --}}
     <div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
       <div class="card">
         <div class="card-body">
@@ -98,6 +99,7 @@
         </div>
       </div>
     </div>
+    {{-- artist names and pic --}}
 
     <div class="col" id="hide" style="display:none">
         <div class="card">
