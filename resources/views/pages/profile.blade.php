@@ -18,7 +18,7 @@
             </div>
             <div class="d-none d-md-block">
               <button class="btn btn-primary btn-icon-text btn-edit-profile">
-                <i data-feather="edit" class="btn-icon-prepend"></i> Edit profile
+                <i data-feather="edit" class="btn-icon-prepend"></i> Edit
               </button>
             </div>
           </div>
@@ -26,24 +26,24 @@
         <div class="header-links">
           <ul class="links d-flex align-items-center mt-3 mt-md-0">
             <li class="header-link-item d-flex align-items-center active">
-              <i class="mr-1 icon-md" data-feather="columns"></i>
-              <a class="pt-1px d-none d-md-block" href="#">Timeline</a>
+              <i class="mr-1 icon-md" data-feather="upload"></i>
+              <a class="pt-1px d-none d-md-block" href="#">Upload</a>
             </li>
             <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-              <i class="mr-1 icon-md" data-feather="user"></i>
-              <a class="pt-1px d-none d-md-block" href="#">About</a>
+              <i class="mr-1 icon-md" data-feather="music"></i>
+              <a class="pt-1px d-none d-md-block" href="#">playlist</a>
             </li>
-            <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
+            {{-- <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
               <i class="mr-1 icon-md" data-feather="users"></i>
               <a class="pt-1px d-none d-md-block" href="#">Friends <span class="text-muted tx-12">3,765</span></a>
+            </li> --}}
+            <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
+              <i class="mr-1 icon-md" data-feather="disc"></i>
+              <a class="pt-1px d-none d-md-block" href="#">Albums</a>
             </li>
             <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-              <i class="mr-1 icon-md" data-feather="image"></i>
-              <a class="pt-1px d-none d-md-block" href="#">Photos</a>
-            </li>
-            <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-              <i class="mr-1 icon-md" data-feather="video"></i>
-              <a class="pt-1px d-none d-md-block" href="#">Videos</a>
+              <i class="mr-1 icon-md" data-feather="music"></i>
+              <a class="pt-1px d-none d-md-block" href="#">song</a>
             </li>
           </ul>
         </div>

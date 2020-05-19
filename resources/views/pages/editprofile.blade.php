@@ -18,59 +18,50 @@
             </div>
             <div class="d-none d-md-block">
               <button class="btn btn-primary btn-icon-text btn-edit-profile">
-                <i data-feather="edit" class="btn-icon-prepend"></i> Edit profile
+                <i data-feather="edit" class="btn-icon-prepend"></i> Edit
               </button>
             </div>
           </div>
         </div>
         <div class="header-links">
-          <ul class="links d-flex align-items-center mt-3 mt-md-0">
+          <ul class="links d-flex align-items-center mt-3 mt-md-0" >
             <li class="header-link-item d-flex align-items-center active">
-              <i class="mr-1 icon-md" data-feather="columns"></i>
-              <a class="pt-1px d-none d-md-block" href="#collapsetimeline" data-toggle="collapse" >Timeline</a>
+              <i class="mr-1 icon-md" data-feather="info"></i>
+              <a class="pt-1px d-none d-md-block" href="/" data-toggle="collapse" data-target="#collapseBasic" >Basic Information</a>
             </li>
             <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-              <i class="mr-1 icon-md" data-feather="user"></i>
-              <a class="pt-1px d-none d-md-block" href="#collapseAbout" data-toggle="collapse">About</a>
+              <i class="mr-1 icon-md" data-feather="lock"></i>
+              <a class="pt-1px d-none d-md-block" href="#collapseAbout"data-toggle="collapse" >Change password</a>
             </li>
             <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
               <i class="mr-1 icon-md" data-feather="users"></i>
-              <a class="pt-1px d-none d-md-block" href="#">Friends <span class="text-muted tx-12">3,765</span></a>
+              <a class="pt-1px d-none d-md-block" href="#">Update email <span class="text-muted tx-12"></span></a>
             </li>
             <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
               <i class="mr-1 icon-md" data-feather="image"></i>
-              <a class="pt-1px d-none d-md-block" href="#">Photos</a>
+              <a class="pt-1px d-none d-md-block" href="#">Feed</a>
             </li>
             <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-              <i class="mr-1 icon-md" data-feather="video"></i>
-              <a class="pt-1px d-none d-md-block" href="#">Videos</a>
+              <i class="mr-1 icon-md" data-feather="book"></i>
+              <a class="pt-1px d-none d-md-block" href="#">About</a>
             </li>
           </ul>
         </div>
       </div>
-
+      <br>
+      {{-- this is a div for collapse in timeline --}}
       <div class="row">
-        <div class="col-lg-12">
-         <div class="card">
-           <div class="collapse" id="collapsetimeline">
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas repudiandae nostrum obcaecati iusto ducimus saepe, vitae sapiente perspiciatis magni quas facilis mollitia ipsa facere quam culpa eligendi illum laudantium, nemo odio maiores cupiditate aliquid. Odio reprehenderit deserunt voluptate alias autem vitae repellat non nobis minima amet! Quia quam labore deleniti laborum porro, omnis, neque assumenda esse cumque et aliquid!
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, quasi nostrum aliquid sint vitae aspernatur asperiores delectus officiis possimus illum quo odio provident dolorum, dolores tempora, cumque temporibus totam veniam? Iusto numquam qui eligendi fugiat laboriosam molestias necessitatibus blanditiis incidunt minima. Quisquam nesciunt distinctio deleniti voluptates quos, quia iure culpa iusto consequatur in quas fugit. Culpa aliquid nisi voluptas reiciendis!
-           </div>
-         </div>
-        </div>
+          <div class="col-lg-12">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="collapse"  id="collapseBasic" >
+                          hoze
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
 
-
-      <div class="row ">
-        <div class="col-lg-12">
-         <div class="card">
-           <div class="collapse" id="collapseAbout">
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas repudiandae nostrum obcaecati iusto ducimus saepe, vitae sapiente perspiciatis magni quas facilis mollitia ipsa facere quam culpa eligendi illum laudantium, nemo odio maiores cupiditate aliquid. Odio reprehenderit deserunt voluptate alias autem vitae repellat non nobis minima amet! Quia quam labore deleniti laborum porro, omnis, neque assumenda esse cumque et aliquid!
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, quasi nostrum aliquid sint vitae aspernatur asperiores delectus officiis possimus illum quo odio provident dolorum, dolores tempora, cumque temporibus totam veniam? Iusto numquam qui eligendi fugiat laboriosam molestias necessitatibus blanditiis incidunt minima. Quisquam nesciunt distinctio deleniti voluptates quos, quia iure culpa iusto consequatur in quas fugit. Culpa aliquid nisi voluptas reiciendis!
-           </div>
-         </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
