@@ -63,7 +63,7 @@
     <ul class="nav">
         <li class="nav-item nav-category">Main</li>
         <li class="nav-item active">
-            <a href="https://www.nobleui.com/laravel/template/dark" class="nav-link">
+            <a href="/dashboard" class="nav-link">
                 <i class="link-icon" data-feather="box"></i>
                 <span class="link-title">Dashboard</span>
             </a>
@@ -170,7 +170,7 @@
       </div>
     </form>
     <ul class="navbar-nav">
-      <li class="nav-item dropdown nav-apps">
+      {{-- <li class="nav-item dropdown nav-apps">
         <a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i data-feather="grid"></i>
         </a>
@@ -191,8 +191,9 @@
             <a href="javascript:;">View all</a>
           </div>
         </div>
-      </li>
-      <li class="nav-item dropdown nav-messages">
+      </li> --}}
+      {{-- grid --}}
+      {{-- <li class="nav-item dropdown nav-messages">
         <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i data-feather="mail"></i>
         </a>
@@ -267,14 +268,15 @@
             <a href="javascript:;">View all</a>
           </div>
         </div>
-      </li>
+      </li> --}}
+      {{-- messege at navbar  --}}
       <li class="nav-item dropdown nav-notifications">
-        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{-- <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i data-feather="bell"></i>
           <div class="indicator">
             <div class="circle"></div>
           </div>
-        </a>
+        </a> --}}
 
       <li class="nav-item dropdown nav-profile">
         <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
