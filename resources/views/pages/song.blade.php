@@ -18,6 +18,7 @@
             </div> --}}
           </div>
         </div>
+        {{-- the design up containing heading and button hover  --}}
         <div class="table-responsive">
           @if(count($songs) > 0)
           <table class="table table-hover mb-0">
