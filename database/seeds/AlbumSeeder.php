@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
+use Psy\Util\Str;
 
-class SongSeeder extends Seeder
+class AlbumSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,8 @@ class SongSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Song::class, 8)->create();
+        
+        factory(App\Album::class, 8)->create();
+
     }
 }

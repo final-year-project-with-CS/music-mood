@@ -9,11 +9,11 @@ use Faker\Generator as Faker;
 $factory->define(Song::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'time' => $faker->randomDigit,
-        'artist' => $faker->name,
-        'album' => $faker->word,
-        'genre' => $faker->name,
-        'plays' => $faker->randomDigit
+        'time' => $faker->dateTime($max = 'now',$timezone=null),
+        'artist_id' => $faker->randomDigit,
+        'album_id' => $faker->randomDigit,
+        'genre' => $faker->creditCardType,
+        'play_count' => $faker->randomDigit
 
     ];
 });

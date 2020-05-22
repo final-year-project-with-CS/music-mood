@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
-class SongSeeder extends Seeder
+class OrganizationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +11,6 @@ class SongSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Song::class, 8)->create();
+        factory(App\Organization::class, 8)->create();
     }
 }

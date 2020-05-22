@@ -52,6 +52,9 @@ Route::get('/album', function () {
 // });
 
 Route::get('song', 'Pagescontroller@song');
+Route::get('role', 'RoleController@index');
+Route::get('organization', 'OrganizationController@index');
+
 
 
 Route::get('/upload', function () {
