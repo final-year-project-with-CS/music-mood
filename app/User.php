@@ -46,12 +46,12 @@ class User extends Authenticatable
     public function songs(){
         return $this->hasMany(Song::class);
     }
-
     public function albums(){
         return $this->hasMany(Album::class);
     }
     public function organisations(){
-        return $this->belongsTo(Organisation::class);
+        return $this->belongsTo(Organization::class);
     }
+
 
 }
