@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRadiosTable extends Migration
+class CreateRoleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateRadiosTable extends Migration
      */
     public function up()
     {
-        Schema::create('radios', function (Blueprint $table) {
-            $table->id();
+        Schema::create('role', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('name');
+            $table->integer('description');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateRadiosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('radios');
+        Schema::dropIfExists('role');
     }
 }
