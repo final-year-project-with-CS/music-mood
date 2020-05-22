@@ -116,10 +116,12 @@
   </div> <!-- row -->
 
   {{-- second card deal with treadings,and other song naratives --}}
+
   <div class="col-lg-12 col-xl-12 stretch-card">
     <div class="card">
         <div class="card-body">
             {{-- 1 st card for units --}}
+            <div class="row">
             <div class="col-md-4 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
@@ -255,8 +257,10 @@
                 </div>
               </div>
               {{-- radio plays --}}
+            </div>
         </div>
     </div>
+    {{-- put /row --}}
 </div>
 {{-- second card --}}
 
