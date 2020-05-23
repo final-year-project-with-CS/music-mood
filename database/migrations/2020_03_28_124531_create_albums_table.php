@@ -18,6 +18,8 @@ class CreateAlbumsTable extends Migration
             $table->string('name');
             $table->string('genre');
             $table->integer('artist_id');
+            $table->string('cover');
+            $table->string('path_to_storage');
             $table->timestamps();
         });
     }

@@ -13,7 +13,8 @@ $factory->define(Song::class, function (Faker $faker) {
         'artist_id' => $faker->randomDigit,
         'album_id' => $faker->randomDigit,
         'genre' => $faker->creditCardType,
-        'play_count' => $faker->randomDigit
+        'play_count' => $faker->randomDigit,
+        'song_file' => $faker->titleMale
 
     ];
 });

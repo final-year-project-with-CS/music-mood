@@ -17,12 +17,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'artist_nickname',
+        'nickname',
         'date_of_birth',
         'avatar',
         'email',
          'password',
-         'isactive',
+         'is_active',
     ];
 
     /**
