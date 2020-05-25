@@ -26,10 +26,17 @@ Route::get('users', 'UserController@getAllUsers');
 //song controller route
 Route::get('songs', ['uses' => 'SongController@getAllSongs']);
 Route::get('song/{songId}', ['uses' => 'SongController@getSong']);
+Route::post('song', ['uses' => 'SongController@postSong']);
+
 
 
 //album controller route
-Route::get('albums', 'AlbumController@getAllalbums');
+Route::get('albums', ['uses' => 'AlbumController@getAllalbums']);
+Route::get('album/{albumId}',['uses' => 'AlbumController@getAlbum']);
+Route::post('album',['uses' => 'AlbumController@postAlbum']);
+Route::get('viewAlbumcover/{albumId}',['uses' => 'AlbumController@viewCover']);
+
+
 
 
 
