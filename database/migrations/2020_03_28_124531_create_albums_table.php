@@ -17,7 +17,7 @@ class CreateAlbumsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('genre');
-            $table->integer('artist_id');
+            $table->integer('user_id');
             $table->string('cover');
             $table->string('path_to_storage');
             $table->timestamps();

@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Psy\Util\Str;
+use App\Role;
 
 class RoleSeeder extends Seeder
 {
@@ -14,7 +15,19 @@ class RoleSeeder extends Seeder
     public function run()
     {
        
-        factory(App\Role::class, 8)->create();
+       $role = new Role();
+       $role->name = "Admin";
+       $role->description = "A system adminstrator";
+       $role->save();
 
+       $role = new Role();
+       $role->name = "artist";
+       $role->description = "owner of the song";
+       $role->save();
+
+       $role = new Role();
+       $role->name = "listener";
+       $role->description = "plays songs";
+       $role->save();
     }
 }

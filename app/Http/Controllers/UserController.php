@@ -15,4 +15,12 @@ class UserController extends Controller
         }
         return response()->json(['users' => $users]);
     }
+
+    public function getUser($userId)
+    {
+        $user = User::find($userId);
+        if(!$user)
+           return response()->json(['error' => 'user not found']);
+           return response()->json(['user' => $user]);
+    }
 }

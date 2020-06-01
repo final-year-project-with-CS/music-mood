@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //user controller route
 Route::get('users', 'UserController@getAllUsers');
+Route::get('user/{userId}', 'UserController@getUser');
 
 
 //song controller route
@@ -34,7 +35,7 @@ Route::post('song', ['uses' => 'SongController@postSong']);
 Route::get('albums', ['uses' => 'AlbumController@getAllalbums']);
 Route::get('album/{albumId}',['uses' => 'AlbumController@getAlbum']);
 Route::post('album',['uses' => 'AlbumController@postAlbum']);
-Route::get('viewAlbumcover/{albumId}',['uses' => 'AlbumController@viewCover']);
+Route::get('viewAlbumcover/{albumId}',['uses' => 'AlbumController@viewAlbumcover']);
 
 
 

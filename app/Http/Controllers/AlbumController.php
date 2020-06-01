@@ -43,7 +43,7 @@ class AlbumController extends Controller
         $album = new Album();
         $album->name = $request->input('name');
         $album->genre = $request->input('genre');
-        $album->artist_id = $request->input('artist_id');
+        $album->user_id = 1;
         $album->cover = $this->path;
         $album->path_to_storage = $path_to_storage;
         $user->albums()->save($album);
