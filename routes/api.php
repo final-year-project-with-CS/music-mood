@@ -40,7 +40,9 @@ Route::get('viewAlbumcover/{albumId}',['uses' => 'AlbumController@viewAlbumcover
 
 
 
-
+//role route
 Route::get('roles', 'RoleController@index');
+
+//organization route
 Route::get('organizations', 'OrganizationController@index');
 

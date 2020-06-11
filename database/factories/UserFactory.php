@@ -32,10 +32,6 @@ $factory->define(User::class, function (Faker $faker) {
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
-<<<<<<< HEAD
-        'is_active' => $faker->boolean()
-=======
         'isactive'=>$faker->boolean,
->>>>>>> a632c4ff6afe9bd28b1ae27f6d32461a362c82ac
     ];
 });

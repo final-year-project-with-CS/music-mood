@@ -45,9 +45,13 @@ Route::get('/artist', function () {
 
 
 
-// Route::get('/song', function () {
-//     return view('pages.song');
-// });
+Route::get('/song', function () {
+    return view('pages.song');
+});
+
+Route::get('/album', ['uses' => 'PagesController@getAllalbums']);
+
+
 
 
 

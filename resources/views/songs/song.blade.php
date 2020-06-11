@@ -19,7 +19,7 @@
           </div>
         </div>
         {{-- the design up containing heading and button hover  --}}
-        <div class="table-responsive">
+        {{-- <div class="table-responsive">
           @if(count($songs) > 0)
           <table class="table table-hover mb-0">
             <thead>
@@ -50,7 +50,9 @@
           </table>
           @else
             <p>Songs not found</p>
-          @endif
+          @endif --}}
+
+          <h1>songs</h1>
 
         </div>
       </div>

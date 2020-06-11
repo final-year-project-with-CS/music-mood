@@ -1,11 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-<<<<<<< HEAD
 use App\User;
 use App\Role;
-=======
->>>>>>> a632c4ff6afe9bd28b1ae27f6d32461a362c82ac
 
 class UserSeeder extends Seeder
 {
@@ -16,7 +13,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD
         //artist
         $role = Role::where('name', 'artist')->first();
 
@@ -66,8 +62,5 @@ class UserSeeder extends Seeder
         // $user->save();
 
 
-=======
-        factory(App\User::class, 8)->create();
->>>>>>> a632c4ff6afe9bd28b1ae27f6d32461a362c82ac
     }
 }
