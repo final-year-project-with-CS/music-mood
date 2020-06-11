@@ -17,8 +17,8 @@ class CreateSongsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('time');
-            $table->string('artist_id');
-            $table->string('album_id')->nullable();
+            $table->integer('artist_id');
+            $table->integer('album_id')->nullable();
             $table->string('genre');
             $table->string('play_count');
             $table->timestamps();
