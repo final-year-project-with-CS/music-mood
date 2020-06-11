@@ -3,83 +3,71 @@
 namespace App\Http\Controllers;
 
 use App\Song;
+use App\Album;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SongController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-
+    //get all songs
+    public function getAllSongs() {
+        return response()->json(['songs' => Song::all()],200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+
+    //get single song
+    public function getSong($songId){
+        $song = Song::find($songId);
+        if(!$song)
+            return response()->json(['error'=>'Song does not found'],404);
+            return response()->json(['song'=>$song],200);
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    //post song
+    public function postSong(Request $request, $albumId)
     {
-        //
-    }
+         $validator = Validator::make($request->all(),[
+             'name'=>'required',
+             'time'=> 'required',
+             'artist_id' => 'required',
+             'album_id' => 'required',
+             'genre' => 'required',
+             'play_count' => 'required',
+             'song_file'=> 'required'
+         ]);
+          if($validator->fails()){
+              return response()->json([
+                  'error' => $validator->errors(),
+              ],404);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Song  $song
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Song $song)
-    {
-        //
-    }
+            }
+            $album = Album::find($albumId);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Song  $song
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Song $song)
-    {
-        //
-    }
+            $path_to_storage = 'songs/' .$album->name. '_'.$album->id. '_songs/'.$request->input('name');
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Song  $song
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Song $song)
-    {
-        //
-    }
+            if(!$album) return response()->json(['error'=>'album not found']);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Song  $song
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Song $song)
-    {
-        //
+            if($request->hasFile('song_file')){
+                $this->songPath = $request->file('song_file')->store('Songs');
+           }else{
+               return response()->json([
+                   'message'=>'song should be thefile(song)' 
+               ],404);
+           }
+
+              $song = new Song();
+              $song->name = $request->input('name');
+              $song->time = 0;
+              $song->song_file = $this->songPath;
+              $song->artist_id = 0;
+              $song->album_id = 0;
+              $song->genre = $request->input('genre');
+              $song->play_count = 0;
+              $album->songs()->save($song);
+
+              return response()->json([
+                  'song' => $song
+              ],200);
     }
 }

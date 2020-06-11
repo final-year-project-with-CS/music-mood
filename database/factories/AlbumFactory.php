@@ -9,6 +9,8 @@ $factory->define(Album::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'genre' => $faker->creditCardType,
-        'artist_id' => $faker->randomDigit
+        'user_id' => 1,
+        'cover' => $faker->jobTitle,
+        'path_to_storage' => $faker->title
     ];
 });

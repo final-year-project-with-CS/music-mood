@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlbumController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,29 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//user controller route
+Route::get('users', 'UserController@getAllUsers');
+Route::get('user/{userId}', 'UserController@getUser');
+
+
+//song controller route
+Route::get('songs', ['uses' => 'SongController@getAllSongs']);
+Route::get('song/{songId}', ['uses' => 'SongController@getSong']);
+Route::post('song', ['uses' => 'SongController@postSong']);
+
+
+
+//album controller route
+Route::get('albums', ['uses' => 'AlbumController@getAllalbums']);
+Route::get('album/{albumId}',['uses' => 'AlbumController@getAlbum']);
+Route::post('album',['uses' => 'AlbumController@postAlbum']);
+Route::get('viewAlbumcover/{albumId}',['uses' => 'AlbumController@viewAlbumcover']);
+
+
+
+
+
+Route::get('roles', 'RoleController@index');
+Route::get('organizations', 'OrganizationController@index');
+

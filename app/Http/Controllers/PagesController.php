@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function song(){
-       $song =  Song::all();
-        return view('pages.song',['songs' => $song]);
-    }
+    // public function song(){
+    //    $song =  Song::all();
+    //     return view('pages.song',['songs' => $song]);
+    // }
 }

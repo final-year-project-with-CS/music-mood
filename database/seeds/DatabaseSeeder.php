@@ -16,7 +16,11 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             OrganizationSeeder::class,
             SongSeeder::class,
+<<<<<<< HEAD
+            UserSeeder::class
+=======
             UserSeeder::class,
+>>>>>>> a632c4ff6afe9bd28b1ae27f6d32461a362c82ac
 
         ]);
     }

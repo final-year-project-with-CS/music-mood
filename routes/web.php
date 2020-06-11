@@ -15,7 +15,7 @@ use App\Song;
 |
 */
 
-Route::get('/', function () {
+Route::get('', function () {
     return view('welcome');
 });
 
@@ -23,7 +23,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('pages.dashboard');
 });
 
@@ -43,17 +43,13 @@ Route::get('/artist', function () {
     return view('pages.artist');
 });
 
-Route::get('/album', function () {
-    return view('pages.album');
-});
+
 
 // Route::get('/song', function () {
 //     return view('pages.song');
 // });
 
-Route::get('song', 'Pagescontroller@song');
-Route::get('role', 'RoleController@index');
-Route::get('organization', 'OrganizationController@index');
+
 
 
 
