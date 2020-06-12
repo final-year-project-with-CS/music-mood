@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class AlbumController extends Controller
 {
 
+    
     //get all albums
     public function getAllAlbums()
     {
@@ -37,7 +38,12 @@ class AlbumController extends Controller
         $path_to_storage = 'albums/' .$user->name. '_' .$user->id.  '_albums/' .$request->input('name');
 
         if($request->hasFile('cover')){
-            $this->path = $request->file('cover')->store($path_to_storage. '/cover');
+            // $this->path = $request->file('cover')->store($path_to_storage. '/cover');
+            $filename = $request->file('cover')->getClientOriginalName();
+            $file = $request->file('cover')->move($path_to_storage. '/cover', $filename);
+            $this->path = pathinfo($file, PATHINFO_DIRNAME);
+            $this->path = $this->path .'/'. $filename;
+
         }
 
         $album = new Album();

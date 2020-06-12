@@ -27,9 +27,9 @@ Route::get('/', function () {
     return view('pages.dashboard');
 });
 
-Route::get('/browse', function () {
-    return view('pages.browse');
-});
+//browses
+Route::get('/browse', ['uses' => 'PagesController@browses']);
+
 
 Route::get('/radio', function () {
     return view('pages.radio');
@@ -44,12 +44,11 @@ Route::get('/artist', function () {
 });
 
 
+//songs
+Route::get('/song', ['uses' => 'PagesController@songs']);
 
-Route::get('/song', function () {
-    return view('pages.song');
-});
-
-Route::get('/album', ['uses' => 'PagesController@getAllalbums']);
+//album
+Route::get('/album', ['uses' => 'PagesController@albums']);
 
 
 

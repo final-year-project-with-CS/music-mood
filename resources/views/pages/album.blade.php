@@ -25,8 +25,23 @@
 
 
 @section('contents')
+@if(count($albums) > 0)
 <div class="card-deck">
+    @foreach ($albums as $album)
     <div class="card album">
+    <img src="{{ asset($album->cover) }}" class="card-img-top" alt="pic">
+        <div class="card-body">
+        <h5 class="card-title">{{ $album->name }}</h5>
+        <p class="card-text">{{ $album->genre}}</p> 
+        </div>
+        {{-- {{ $album->links() }} --}}
+    </div>
+    @endforeach
+    @else
+     <p>albums not found</p>
+    @endif
+   
+    {{-- <div class="card album">
         <img src="assets/images/sample1.jpg" class="card-img-top" alt="pic">
         <div class="card-body">
             <h5 class="card-title">TREY GUZO</h5>
@@ -47,15 +62,8 @@
             <p class="card-text">This is new music.</p>
         </div>
     </div>
-    <div class="card album">
-        <img src="assets/images/sample1.jpg" class="card-img-top" alt="pic">
-        <div class="card-body">
-            <h5 class="card-title">TREY GUZO</h5>
-            <p class="card-text">This is new music.</p>
-        </div>
-    </div>
-  </div>
-  <br>
+  </div> --}}
+  {{-- <br> --}}
   
 
   <div id="drop" class="w-100" style="animation-play-state: paused; display:none;">

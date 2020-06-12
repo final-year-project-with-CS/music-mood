@@ -18,8 +18,8 @@
             </div> --}}
           </div>
         </div>
-        {{-- the design up containing heading and button hover  --}}
-        {{-- <div class="table-responsive">
+        {{-- the design up containing heading and button hover  --}} 
+         <div class="table-responsive">
           @if(count($songs) > 0)
           <table class="table table-hover mb-0">
             <thead>
@@ -28,7 +28,6 @@
                 <th class="pt-0">Name</th>
                 <th class="pt-0">Time</th>
                 <th class="pt-0">Artist</th>
-                <th class="pt-0">Album</th>
                 <th class="pt-0">Genre</th>
                 <th class="pt-0">Plays</th>
               </tr>
@@ -39,10 +38,9 @@
               <td>{{ $song->id }}</td>
               <td>{{ $song->name }}</td>
               <td>{{ $song->time }}</td>
-              <td>{{ $song->artist }}</td>
-              <td>{{ $song->album }}</td>
+              <td>{{ $song->song_file }}</td>
               <td>{{ $song->genre }}</td>
-              <td>{{ $song->plays }}</td>
+              <td>{{ $song->play_count }}</td>
               </tr>
               @endforeach
 
@@ -50,9 +48,8 @@
           </table>
           @else
             <p>Songs not found</p>
-          @endif --}}
+          @endif
 
-          <h1>songs</h1>
 
         </div>
       </div>

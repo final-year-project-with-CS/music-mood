@@ -8,13 +8,18 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function getAllalbums()
-    {
-        $albums = Album::all();
-
-        foreach ($albums as $album) {
-            $album->songs;
-        }
-        return view("pages.album",['albums' => $album]);
+    public function songs(){
+       $songs =  Song::all();
+        return view('pages.song', ['songs' => $songs]);
     }
+
+    public function albums(){
+        $albums =  Album::all();
+         return view('pages.album', ['albums' => $albums]);
+     }
+     public function browses(){
+         $browses = Album::all();
+         return view('pages.browse', ['browses' => $browses]);
+     }
+ 
 }

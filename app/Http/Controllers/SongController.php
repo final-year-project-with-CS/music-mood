@@ -52,7 +52,7 @@ class SongController extends Controller
                 $this->songPath = $request->file('song_file')->store('Songs');
            }else{
                return response()->json([
-                   'message'=>'song should be thefile(song)' 
+                   'message'=>'song should be the file(song)' 
                ],404);
            }
 
