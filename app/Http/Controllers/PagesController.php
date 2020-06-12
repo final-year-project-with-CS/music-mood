@@ -14,7 +14,7 @@ class PagesController extends Controller
     }
 
     public function albums(){
-        $albums =  Album::all();
+        $albums =  Album::all()->paginate();
          return view('pages.album', ['albums' => $albums]);
      }
      public function browses(){

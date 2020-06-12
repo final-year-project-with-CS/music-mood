@@ -34,7 +34,7 @@
         <h5 class="card-title">{{ $album->name }}</h5>
         <p class="card-text">{{ $album->genre}}</p> 
         </div>
-        {{-- {{ $album->links() }} --}}
+        {{ $albums->links() }}
     </div>
     @endforeach
     @else
