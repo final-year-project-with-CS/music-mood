@@ -10,7 +10,7 @@
     @foreach ($browses as $browse)
        <div class="col-lg-4 mb-3">
         <div class="card">
-        <img src="{{ asset($browse->cover)}}" class="card-img-top" alt="pic">
+        <img src="{{ asset($browse->cover)}}" class="card-img-top" height="300" width="100%" alt="pic">
             <div class="card-body">
             <h5 class="card-title">{{ $browse->name }}</h5>
                 <p class="card-text">This is new music</p>

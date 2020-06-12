@@ -14,7 +14,7 @@ class PagesController extends Controller
     }
 
     public function albums(){
-        $albums =  Album::all()->paginate();
+        $albums =  Album::orderBy('name')->paginate(3);
          return view('pages.album', ['albums' => $albums]);
      }
      public function browses(){

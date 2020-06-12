@@ -26,46 +26,31 @@
 
 @section('contents')
 @if(count($albums) > 0)
-<div class="card-deck">
+<div class="row">
     @foreach ($albums as $album)
-    <div class="card album">
-    <img src="{{ asset($album->cover) }}" class="card-img-top" alt="pic">
-        <div class="card-body">
-        <h5 class="card-title">{{ $album->name }}</h5>
-        <p class="card-text">{{ $album->genre}}</p> 
+    <div class="col-lg-4">
+        <div class="card album">
+        <img src="{{ asset($album->cover) }}" class="card-img-top" height="300" width="100%" alt="pic">
+            <div class="card-body">
+            <h5 class="card-title">{{ $album->name }}</h5>
+            <p class="card-text">{{ $album->genre}}</p> 
+            </div>
         </div>
-        {{ $albums->links() }}
-    </div>
-    @endforeach
+</div>
+@endforeach
+
+</div>
+
+<div class="paginate float-right mt-2">
+    {{ $albums->links() }}
+
+</div>
+    
+
     @else
      <p>albums not found</p>
     @endif
-   
-    {{-- <div class="card album">
-        <img src="assets/images/sample1.jpg" class="card-img-top" alt="pic">
-        <div class="card-body">
-            <h5 class="card-title">TREY GUZO</h5>
-            <p class="card-text">This is new music.</p>
-        </div>
-    </div>
-    <div class="card album">
-        <img src="assets/images/sample1.jpg" class="card-img-top" alt="pic">
-        <div class="card-body">
-            <h5 class="card-title">TREY GUZO</h5>
-            <p class="card-text">This is new music.</p>
-        </div>
-    </div>
-    <div class="card album">
-        <img src="assets/images/sample1.jpg" class="card-img-top" alt="pic">
-        <div class="card-body">
-            <h5 class="card-title">TREY GUZO</h5>
-            <p class="card-text">This is new music.</p>
-        </div>
-    </div>
-  </div> --}}
-  {{-- <br> --}}
-  
-
+    {{-- collapse songs --}}
   <div id="drop" class="w-100" style="animation-play-state: paused; display:none;">
     <br>
     <table class="table w-100">
