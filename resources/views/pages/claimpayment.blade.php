@@ -122,7 +122,7 @@
         <div class="card-body">
             {{-- 1 st card for units --}}
             <div class="row">
-            <div class="col-md-4 grid-margin stretch-card">
+            <div class="col-md-4 grid-margin stretch-card" style="height: 120px">
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline">
