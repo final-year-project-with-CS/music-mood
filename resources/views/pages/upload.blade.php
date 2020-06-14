@@ -53,12 +53,38 @@ input {
 </style>
 @endsection
 @section('contents')
-<h3 style="text-align:center">UPLOAD MUSIC</h3>
-<br><br><br><br>
+
+<h5 class="display-5 text-center" style="font-size: 35px">Please select your upload type</h5> 
+<h6 class="display-6 text-muted text-center">Music moods gives you unlimited storage, for free</h6>
+<div class="container">
+  <div class="row">
+    <a href="#" class="col-lg-5">
+      <div class="card">
+        <div class="card-body">
+          <img src="assets\images\song.png" height="350" width="100%" alt="img">
+          <div class="card-title text-center">
+            Songs
+          </div>
+        </div>
+      </div>
+    </a>
+    <a href="/album_form" class="col-lg-5">
+      <div class="card">
+        <div class="card-body">
+          <img src="assets\images\audio.png" height="350" width="100%" alt="img">
+          <div class="card-title text-center">
+            Albums/Ep
+          </div>
+          
+        </div>
+      </div>
+    </a>
+   </div>
+</div>
 {{-- <div style="text-align:center">
     <button class="button button4" type="button" onclick="alert('Hello world!')" >Browse to file</button>
 </div> --}}
-<form class="md-form">
+{{-- <form class="md-form">
     <div class="file-field">
       <div class="z-depth-1-half mb-4">
 
@@ -73,7 +99,7 @@ input {
         </div>
       </div>
     </div>
-  </form>
+  </form> --}}
 
 @endsection
 

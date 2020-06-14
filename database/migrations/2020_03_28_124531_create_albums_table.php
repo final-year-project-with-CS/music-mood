@@ -19,7 +19,6 @@ class CreateAlbumsTable extends Migration
             $table->string('genre');
             $table->integer('user_id');
             $table->string('cover');
-            $table->string('path_to_storage');
             $table->timestamps();
         });
     }

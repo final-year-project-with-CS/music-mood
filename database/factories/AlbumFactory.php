@@ -11,6 +11,5 @@ $factory->define(Album::class, function (Faker $faker) {
         'genre' => $faker->creditCardType,
         'user_id' => 1,
         'cover' => $faker->jobTitle,
-        'path_to_storage' => $faker->title
     ];
 });

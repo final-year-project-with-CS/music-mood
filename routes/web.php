@@ -43,13 +43,21 @@ Route::get('/artist', function () {
     return view('pages.artist');
 });
 
+//album form
+Route::get('/album_form', function () {
+    return view('pages.album_form');
+});
 
 //songs
 Route::get('/song', ['uses' => 'PagesController@songs']);
 
 //album
-Route::get('/album', ['uses' => 'PagesController@albums']);
+// Route::get('/album', ['uses' => 'AlbumController@albums']);
 
+Route::get('/album', ['uses' => 'AlbumController@getAllalbums']);
+// Route::get('album/{albumId}',['uses' => 'AlbumController@getAlbum']);
+// Route::post('album',['uses' => 'AlbumController@postAlbum']);
+// Route::get('viewAlbumcover/{albumId}',['uses' => 'AlbumController@viewAlbumcover']);
 
 
 

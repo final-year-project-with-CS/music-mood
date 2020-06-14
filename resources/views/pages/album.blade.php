@@ -53,6 +53,7 @@
     {{-- collapse songs --}}
   <div id="drop" class="w-100" style="animation-play-state: paused; display:none;">
     <br>
+    
     <table class="table w-100">
         <tr>
             <th>#</th>

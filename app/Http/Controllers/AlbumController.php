@@ -9,16 +9,15 @@ use Illuminate\Http\Request;
 class AlbumController extends Controller
 {
 
-    
     //get all albums
-    public function getAllAlbums()
+    public function getAllalbums()
     {
         $albums = Album::all();
 
         foreach ($albums as $album) {
             $album->songs;
         }
-        return response()->json(['albums' => $albums], 200);
+        return view('pages.album', ['albums' => $albums]);
     }
 
     //get single album
@@ -38,7 +37,6 @@ class AlbumController extends Controller
         $path_to_storage = 'albums/' .$user->name. '_' .$user->id.  '_albums/' .$request->input('name');
 
         if($request->hasFile('cover')){
-            // $this->path = $request->file('cover')->store($path_to_storage. '/cover');
             $filename = $request->file('cover')->getClientOriginalName();
             $file = $request->file('cover')->move($path_to_storage. '/cover', $filename);
             $this->path = pathinfo($file, PATHINFO_DIRNAME);
@@ -47,11 +45,10 @@ class AlbumController extends Controller
         }
 
         $album = new Album();
-        $album->name = $request->input('name');
+        $album->name = $request->input('album_name');
         $album->genre = $request->input('genre');
         $album->user_id = 1;
         $album->cover = $this->path;
-        $album->path_to_storage = $path_to_storage;
         $user->albums()->save($album);
 
        return  response()->json(['album' => $album]);
