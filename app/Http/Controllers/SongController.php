@@ -28,46 +28,46 @@ class SongController extends Controller
     public function postSong(Request $request, $albumId)
     {
          $validator = Validator::make($request->all(),[
-             'name'=>'required',
-            //  'time'=> 'required',
-            //  'artist_id' => 'required',
-            //  'album_id' => 'required',
+             'artist_name' =>'required',
+             'time'=> 'required',
+             'artist_id' => 'required',
+             'album_id' => 'required',
              'genre' => 'required',
-            //  'play_count' => 'required',
+             'play_count' => 'required',
          ]);
           if($validator->fails()){
               return response()->json([
                   'error' => $validator->errors(),
               ],404);
             }
-            $album = Album::find($albumId);
-        
-            $path_to_storage = 'songs/' .$album->name. '_'.$album->id. '_songs/'.$request->input('name');
+            $album = Album::find(1);
+           
+            $path_to_storage = 'songs/' .$album->name. '_'.$album->id. '_songs/'.$request->input('artist_name');
                
             if(!$album) return response()->json(['error'=>'album not found']);
 
            
-        if($request->hasFile('songFile')){
-            $filename = $request->file('songFile')->getClientOriginalName();
-            $file = $request->file('songFile')->move($path_to_storage. '/songs', $filename);
+        if($request->hasFile('song_file')){
+            $filename = $request->file('song_file')->getClientOriginalName();
+            $file = $request->file('song_file')->move($path_to_storage. '/songs', $filename);
             $this->songPath = pathinfo($file, PATHINFO_DIRNAME);
             $this->songPath = $this->songPath .'/'. $filename;
 
         }
              else{
                return response()->json([
-                   'message'=>'song should be the file(song)' 
+                   'message' => 'song should be the file(song)' 
                ],404);
            }
 
               $song = new Song();
-              $song->name = $request->input('name');
-              $song->time = 0;
-              $song->song_file = $this->songPath;
-              $song->artist_id = 0;
-              $song->album_id = 0;
+              $song->name = $request->input('artist_name');
+              $song->time = $request->input('time');
+              $song->song_file = $filename;
+              $song->artist_id = $request->input('artist_id');
+              $song->album_id = $request->input('album_id');
               $song->genre = $request->input('genre');
-              $song->play_count = 0;
+              $song->play_count = $request->input('play_count');
               $album->songs()->save($song);
 
               return redirect('/song_form');

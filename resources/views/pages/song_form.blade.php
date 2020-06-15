@@ -51,6 +51,7 @@ input {
 .submitButton {
     margin-left: 50%;
     margin-top: 15px;
+    /* float: right */
     border-radius: 10px;
 }
 </style>
@@ -72,36 +73,70 @@ input {
                       <span></span>
                       <label class="label" for="file">
                         <i class="link-icon" data-feather="camera"></i>
-                        Upload Image
-                          <input type="file" id="file" name="cover">
+                        Upload Song
+                          <input type="file" id="file" name="song_file">
                       </label>
                     </div>
                   </div>         
             </div>
         </div>
         <div class="col-lg-9">
-             <div class="form-group ">
-                 <label for="artist">Artist</label>
-                 <input type="text" class="form-control" name="name" placeholder="Artist name">
-             </div>
-
-             <div class="form-group">
-                <label for="Album">Song Name</label>
-                <input type="text" class="form-control" name="name" placeholder="Album name">
+     <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group ">
+                <label for="artist">Artist id</label>
+                <input type="text" class="form-control" name="artist_id" placeholder="Artist id">
+            </div>
+          </div>
+    
+              <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="Album">artist Name</label>
+                    <input type="text" class="form-control" name="artist_name" placeholder="artist name">
+                </div>
+              </div>
+    
+     </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="Album">album id</label>
+                        <input type="text" class="form-control" name="album_id" placeholder="album id">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="Album">duration</label>
+                        <input type="text" class="form-control" name="play_count" placeholder="play_count">
+                    </div>
+                </div>
+            
             </div>
 
-
-            <div class="form-group">
-                <label for="genre">Genre</label>
-                <select class=" dropdown-toggle" id="inputGroupSelect04" name="genre">
-                  <option selected>Choose Genre</option>
-                  <option value="pop">Pop</option>
-                  <option value="trap">Trap</option>
-                  <option value="bongo fleva">Bongo fleva</option>
-                </select>
-            
-        
+           
+<div class="row">
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label for="Album">time</label>
+            <input type="text" class="form-control" name="time" placeholder="time">
         </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <select class=" dropdown-toggle" id="inputGroupSelect04" name="genre">
+              <option selected>Choose Genre</option>
+              <option value="pop">Pop</option>
+              <option value="trap">Trap</option>
+              <option value="bongo fleva">Bongo fleva</option>
+            </select>
+        
+    
+    </div>
+    </div>
+</div>
+
+            
     </div>
     <button class="btn btn-lg btn-primary submitButton" type="submit" name="submit">Upload Song</button>
 </form>
