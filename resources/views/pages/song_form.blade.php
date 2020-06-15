@@ -59,9 +59,9 @@ input {
 @section('contents')
 <div class="container">
     <h5 class="display-5 text-center mb-5">
-        Enter Album Details
+        Enter Song Details
     </h5>
-<form action=" /store " method="POST" enctype="multipart/form-data">
+<form action=" /storeSong/{albumId} " method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-lg-3">
@@ -82,13 +82,14 @@ input {
         <div class="col-lg-9">
              <div class="form-group ">
                  <label for="artist">Artist</label>
-                 <input type="text" class="form-control" name="artist" placeholder="Artist name">
+                 <input type="text" class="form-control" name="name" placeholder="Artist name">
              </div>
 
              <div class="form-group">
-                <label for="Album">Album Name</label>
-                <input type="text" class="form-control" name="album_name" placeholder="Album name">
+                <label for="Album">Song Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Album name">
             </div>
+
 
             <div class="form-group">
                 <label for="genre">Genre</label>

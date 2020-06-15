@@ -12,8 +12,7 @@ class AlbumController extends Controller
     //get all albums
     public function getAllalbums()
     {
-        $albums = Album::all();
-
+        $albums = Album::orderBy('name')->paginate(3);
         foreach ($albums as $album) {
             $album->songs;
         }
@@ -32,9 +31,8 @@ class AlbumController extends Controller
     //post album
     public function postAlbum(Request $request)
     {
-        $user = User::find($request->user_id);
-
-        $path_to_storage = 'albums/' .$user->name. '_' .$user->id.  '_albums/' .$request->input('name');
+        $user = User::find($request->input('artist'));
+        $path_to_storage = 'albums/' .$user->name. '_' .$user->id.  '_albums/' .$request->input('album_name');
 
         if($request->hasFile('cover')){
             $filename = $request->file('cover')->getClientOriginalName();
@@ -51,7 +49,7 @@ class AlbumController extends Controller
         $album->cover = $this->path;
         $user->albums()->save($album);
 
-       return  response()->json(['album' => $album]);
+       return  redirect('/album_form');
     }
 
     //view cover album

@@ -25,9 +25,9 @@ Route::get('user/{userId}', 'UserController@getUser');
 
 
 //song controller route
-Route::get('songs', ['uses' => 'SongController@getAllSongs']);
+Route::get('songs', ['uses' => 'SongController@getAllsongs']);
 Route::get('song/{songId}', ['uses' => 'SongController@getSong']);
-Route::post('song', ['uses' => 'SongController@postSong']);
+Route::post('song/{albumId}', ['uses' => 'SongController@postSong']);
 
 
 

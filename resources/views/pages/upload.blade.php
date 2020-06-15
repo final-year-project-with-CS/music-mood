@@ -58,7 +58,7 @@ input {
 <h6 class="display-6 text-muted text-center">Music moods gives you unlimited storage, for free</h6>
 <div class="container">
   <div class="row">
-    <a href="#" class="col-lg-5">
+    <a href="/song_form" class="col-lg-5">
       <div class="card">
         <div class="card-body">
           <img src="assets\images\song.png" height="350" width="100%" alt="img">

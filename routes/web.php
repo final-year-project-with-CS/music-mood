@@ -43,23 +43,37 @@ Route::get('/artist', function () {
     return view('pages.artist');
 });
 
-//album form
-Route::get('/album_form', function () {
-    return view('pages.album_form');
-});
+
 
 //songs
-Route::get('/song', ['uses' => 'PagesController@songs']);
+Route::get('/song', ['uses' => 'SongController@getAllsongs']);
+// Route::get('songs', ['uses' => 'SongController@getAllSongs']);
+Route::get('song/{songId}', ['uses' => 'SongController@getSong']);
+Route::post('storeSong/{albumId}', ['uses' => 'SongController@postSong']);
+
+//album form
+Route::get('/song_form', function () {
+    return view('pages.song_form');
+});
+
+
+
+
+
+
 
 //album
 // Route::get('/album', ['uses' => 'AlbumController@albums']);
 
-Route::get('/album', ['uses' => 'AlbumController@getAllalbums']);
+Route::get('album', ['uses' => 'AlbumController@getAllalbums']);
 // Route::get('album/{albumId}',['uses' => 'AlbumController@getAlbum']);
-// Route::post('album',['uses' => 'AlbumController@postAlbum']);
+Route::post('store',['uses' => 'AlbumController@postAlbum']);
 // Route::get('viewAlbumcover/{albumId}',['uses' => 'AlbumController@viewAlbumcover']);
 
-
+//album form
+Route::get('/album_form', function () {
+    return view('pages.album_form');
+});
 
 
 
