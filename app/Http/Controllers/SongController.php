@@ -40,8 +40,7 @@ class SongController extends Controller
                   'error' => $validator->errors(),
               ],404);
             }
-            $album = Album::find(1);
-           
+            $album = Album::find(2);
             $path_to_storage = 'songs/' .$album->name. '_'.$album->id. '_songs/'.$request->input('artist_name');
                
             if(!$album) return response()->json(['error'=>'album not found']);
