@@ -17,10 +17,10 @@ class SongController extends Controller
 
     //get single song
     public function getSong($songId){
-        $song = Song::find($songId);
+        $song = Song::find((6));
         if(!$song)
             return response()->json(['error'=>'Song does not found'],404);
-            return response()->json(['song'=>$song],200);
+            return view('pages.song_view', ['songs' => $song],200);
         
     }
 
@@ -30,7 +30,6 @@ class SongController extends Controller
          $validator = Validator::make($request->all(),[
              'artist_name' =>'required',
              'time'=> 'required',
-             'artist_id' => 'required',
              'album_id' => 'required',
              'genre' => 'required',
              'play_count' => 'required',
@@ -40,7 +39,7 @@ class SongController extends Controller
                   'error' => $validator->errors(),
               ],404);
             }
-            $album = Album::find(2);
+            $album = Album::find((int) $request->input('album_id'));
             $path_to_storage = 'songs/' .$album->name. '_'.$album->id. '_songs/'.$request->input('artist_name');
                
             if(!$album) return response()->json(['error'=>'album not found']);
@@ -63,7 +62,7 @@ class SongController extends Controller
               $song->name = $request->input('artist_name');
               $song->time = $request->input('time');
               $song->song_file = $filename;
-              $song->artist_id = $request->input('artist_id');
+              $song->artist_id = 1;
               $song->album_id = $request->input('album_id');
               $song->genre = $request->input('genre');
               $song->play_count = $request->input('play_count');

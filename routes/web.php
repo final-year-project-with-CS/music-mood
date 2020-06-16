@@ -44,11 +44,9 @@ Route::get('/artist', function () {
 });
 
 
-
 //songs
 Route::get('/song', ['uses' => 'SongController@getAllsongs']);
-// Route::get('songs', ['uses' => 'SongController@getAllSongs']);
-Route::get('song/{songId}', ['uses' => 'SongController@getSong']);
+Route::get('song_view/{songId}', ['uses' => 'SongController@getSong']);
 Route::post('storeSong/{albumId}', ['uses' => 'SongController@postSong']);
 
 //album form

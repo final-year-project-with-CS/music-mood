@@ -55,13 +55,13 @@ input {
 @section('contents')
 
 <h5 class="display-5 text-center" style="font-size: 35px">Please select your upload type</h5> 
-<h6 class="display-6 text-muted text-center">Music moods gives you unlimited storage, for free</h6>
+<h6 class="display-6 text-muted text-center mb-5">Music moods gives you unlimited storage, for free</h6>
 <div class="container">
   <div class="row">
     <a href="/song_form" class="col-lg-5">
       <div class="card">
         <div class="card-body">
-          <img src="assets\images\song.png" height="350" width="100%" alt="img">
+          <img src="assets\images\song.png" height="300" width="100%" alt="img">
           <div class="card-title text-center">
             Songs
           </div>
@@ -71,7 +71,7 @@ input {
     <a href="/album_form" class="col-lg-5">
       <div class="card">
         <div class="card-body">
-          <img src="assets\images\audio.png" height="350" width="100%" alt="img">
+          <img src="assets\images\song.png" height="300" width="100%" alt="img">
           <div class="card-title text-center">
             Albums/Ep
           </div>

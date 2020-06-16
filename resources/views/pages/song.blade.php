@@ -1,4 +1,10 @@
 @extends('layouts.app')
+
+@section('styles')
+<style>
+</style>
+@endsection
+    
 @section('contents')
 <div class="col-lg-12 col-xl-12 stretch-card">
     <div class="card">
@@ -9,13 +15,13 @@
             <button class="btn p-0" type="button" id="dropdownMenuButton7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
             </button>
-            {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton7">
-              <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" class="icon-sm mr-2"></i> <span class="">View</span></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton7">
+              <a class="dropdown-item d-flex align-items-center" href="/song_view/{songId}"><i data-feather="eye" class="icon-sm mr-2"></i> <span class="">View</span></a>
               <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" class="icon-sm mr-2"></i> <span class="">Edit</span></a>
               <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" class="icon-sm mr-2"></i> <span class="">Delete</span></a>
               <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" class="icon-sm mr-2"></i> <span class="">Print</span></a>
               <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" class="icon-sm mr-2"></i> <span class="">Download</span></a>
-            </div> --}}
+            </div>
           </div>
         </div>
         {{-- the design up containing heading and button hover  --}} 
@@ -38,7 +44,7 @@
               <td>{{ $song->id }}</td>
               <td>{{ $song->name }}</td>
               <td>{{ $song->time }}</td>
-              <td>{{ $song->song_file }}</td>
+              <td><a class="nav-link text-primary " href="/song_view/{songId}">{{ $song->song_file }}</a></td>
               <td>{{ $song->genre }}</td>
               <td>{{ $song->play_count }}</td>
               </tr>
