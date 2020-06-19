@@ -82,12 +82,18 @@ input {
         </div>
         <div class="col-lg-9">
      <div class="row">
-        <div class="col-lg-6">
-            {{-- <div class="form-group ">
-                <label for="artist">Artist id</label>
-                <input type="text" class="form-control" name="artist_id" placeholder="Artist id">
-            </div> --}}
-          </div>
+     <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="album">Album</label>
+                        <select class=" dropdown-toggle" id="inputGroupSelect04" name="album_id">
+                          <option selected>Choose Album</option>
+                          <option value="1">father of four</option>
+                          <option value="2">cospiracy</option>
+                          <option value="3">changes</option>
+                          <option value="4">offspring</option>
+                        </select>
+                </div>
+                </div>
     
               <div class="col-lg-6">
                 <div class="form-group">
@@ -98,20 +104,12 @@ input {
     
      </div>
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="album">Album</label>
-                        <select class=" dropdown-toggle" id="inputGroupSelect04" name="album_id">
-                          <option selected>Choose Album</option>
-                          <option value="1">father of four</option>
-                          <option value="2">cospiracy</option>
-                          <option value="3">changes</option>
-                          <option value="4">offspring</option>
-                        </select>
-                    
-                
-                </div>
-                </div>
+            <div class="col-lg-6">
+        <div class="form-group">
+            <label for="Album">time</label>
+            <input type="text" class="form-control" name="time" placeholder="time">
+        </div>
+    </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="Album">duration</label>
@@ -123,12 +121,7 @@ input {
 
            
 <div class="row">
-    <div class="col-lg-6">
-        <div class="form-group">
-            <label for="Album">time</label>
-            <input type="text" class="form-control" name="time" placeholder="time">
-        </div>
-    </div>
+    
     <div class="col-lg-6">
         <div class="form-group">
             <label for="genre">Genre</label>
@@ -143,7 +136,6 @@ input {
     </div>
     </div>
 </div>
-
             
     </div>
     <button class="btn btn-lg btn-primary submitButton" type="submit" name="submit">Upload Song</button>

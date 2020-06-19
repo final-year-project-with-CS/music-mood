@@ -102,9 +102,11 @@ input {
         
         </div>
     </div>
-    <button class="btn btn-lg btn-primary submitButton" type="submit" name="submit">Upload Song</button>
+    <button class="btn btn-lg btn-primary submitButton" type="submit" name="submit">Upload Album</button>
 </form>
     
+
+
 </div>
 @endsection
 

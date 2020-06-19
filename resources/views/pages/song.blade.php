@@ -44,12 +44,11 @@
               <td>{{ $song->id }}</td>
               <td>{{ $song->name }}</td>
               <td>{{ $song->time }}</td>
-              <td><a class="nav-link text-primary " href="/song_view/{songId}">{{ $song->song_file }}</a></td>
+              <td><a class="nav-link text-primary " href="/song_view/{{ $song->id }}">{{ $song->song_file }}</a></td>
               <td>{{ $song->genre }}</td>
               <td>{{ $song->play_count }}</td>
               </tr>
               @endforeach
-
             </tbody>
           </table>
           @else

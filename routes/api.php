@@ -29,6 +29,7 @@ Route::get('songs', ['uses' => 'SongController@getAllsongs']);
 Route::get('song/{songId}', ['uses' => 'SongController@getSong']);
 Route::post('song/{albumId}', ['uses' => 'SongController@postSong']);
 
+Route::get('playSong/{songId}',['uses' => 'SongController@playSong']);
 
 
 //album controller route

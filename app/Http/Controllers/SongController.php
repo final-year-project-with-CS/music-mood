@@ -16,12 +16,22 @@ class SongController extends Controller
     
 
     //get single song
-    public function getSong($songId){
-        $song = Song::find((6));
-        if(!$song)
-            return response()->json(['error'=>'Song does not found'],404);
-            return view('pages.song_view', ['songs' => $song],200);
+    // public function getSong($songId){
+    //     $song = Song::find((2));
+    //     if(!$song)
+    //         return response()->json(['error'=>'Song does not found'],404);
+    //         return view('pages.single_song', ['song' => $song]);
         
+    // }
+
+
+    public function getSong($songId){
+        $song = Song::find($songId);
+
+        if(!$song) 
+        return response()->json(['error'=>'Song does not found'],404);
+        
+        return view('pages.song_view', ['song' => $song]);
     }
 
     //post song
@@ -61,7 +71,7 @@ class SongController extends Controller
               $song = new Song();
               $song->name = $request->input('artist_name');
               $song->time = $request->input('time');
-              $song->song_file = $filename;
+              $song->song_file = $this->songPath;
               $song->artist_id = 1;
               $song->album_id = $request->input('album_id');
               $song->genre = $request->input('genre');
@@ -69,5 +79,15 @@ class SongController extends Controller
               $album->songs()->save($song);
 
               return redirect('/song_form');
+    }
+
+    public function playSong($songId){
+        $song = Song::find($songId);
+        if(!$song) {
+            return response()->json(['error' => 'song not found']);
+        }
+
+        $pathToFile = storage_path('/app/songs/a.mp3');
+        return response()->download($pathToFile);
     }
 }

@@ -22,7 +22,7 @@
         href="assets\plugins\bootstrap-datepicker\css\bootstrap-datepicker.min.css">
 
     <!-- common css -->
-    <link media="all" type="text/css" rel="stylesheet" href="css\app.css">
+    <link media="all" type="text/css" rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- end common css -->
 
 
@@ -288,8 +288,8 @@
               <img src="assets\images\faces\face1.jpg" alt="">
             </div>
             <div class="info text-center">
-              <p class="name font-weight-bold mb-0">Amiah Burton</p>
-              <p class="email text-muted mb-3">amiahburton@gmail.com</p>
+              <p class="name font-weight-bold mb-0">chris breeze</p>
+              <p class="email text-muted mb-3">breeze@gmail.com</p>
             </div>
           </div>
           <div class="dropdown-body">

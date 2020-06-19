@@ -19,6 +19,8 @@ Route::get('', function () {
     return view('welcome');
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -53,10 +55,6 @@ Route::post('storeSong/{albumId}', ['uses' => 'SongController@postSong']);
 Route::get('/song_form', function () {
     return view('pages.song_form');
 });
-
-
-
-
 
 
 
