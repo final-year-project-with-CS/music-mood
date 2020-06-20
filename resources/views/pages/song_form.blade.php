@@ -87,9 +87,9 @@ input {
                         <label for="album">Album</label>
                         <select class=" dropdown-toggle" id="inputGroupSelect04" name="album_id">
                           <option selected>Choose Album</option>
-                          <option value="1">father of four</option>
+                          <option value="1">changes</option>
                           <option value="2">cospiracy</option>
-                          <option value="3">changes</option>
+                          <option value="3">infinity</option>
                           <option value="4">offspring</option>
                         </select>
                 </div>

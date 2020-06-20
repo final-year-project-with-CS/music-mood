@@ -6,6 +6,7 @@
 @endsection
     
 @section('contents')
+          @if(count($songs) > 0)
 <div class="col-lg-12 col-xl-12 stretch-card">
     <div class="card">
       <div class="card-body">
@@ -16,7 +17,7 @@
               <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton7">
-              <a class="dropdown-item d-flex align-items-center" href="/song_view/{songId}"><i data-feather="eye" class="icon-sm mr-2"></i> <span class="">View</span></a>
+              <a class="dropdown-item d-flex align-items-center" href="/song_view/ "><i data-feather="eye" class="icon-sm mr-2"></i> <span class="">View</span></a>
               <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" class="icon-sm mr-2"></i> <span class="">Edit</span></a>
               <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" class="icon-sm mr-2"></i> <span class="">Delete</span></a>
               <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" class="icon-sm mr-2"></i> <span class="">Print</span></a>
@@ -26,14 +27,12 @@
         </div>
         {{-- the design up containing heading and button hover  --}} 
          <div class="table-responsive">
-          @if(count($songs) > 0)
           <table class="table table-hover mb-0">
             <thead>
               <tr>
                 <th class="pt-0">#</th>
                 <th class="pt-0">Name</th>
                 <th class="pt-0">Time</th>
-                <th class="pt-0">Artist</th>
                 <th class="pt-0">Genre</th>
                 <th class="pt-0">Plays</th>
               </tr>
@@ -42,9 +41,8 @@
               @foreach ($songs as $song)
               <tr>
               <td>{{ $song->id }}</td>
-              <td>{{ $song->name }}</td>
+              <td><a class="nav-link text-primary " href="/song_view/{{ $song->id }}">{{ $song->name }}</a></td>
               <td>{{ $song->time }}</td>
-              <td><a class="nav-link text-primary " href="/song_view/{{ $song->id }}">{{ $song->song_file }}</a></td>
               <td>{{ $song->genre }}</td>
               <td>{{ $song->play_count }}</td>
               </tr>

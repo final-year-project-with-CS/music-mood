@@ -80,10 +80,17 @@ input {
             </div>
         </div>
         <div class="col-lg-9">
-             <div class="form-group ">
-                 <label for="artist">Artist</label>
-                 <input type="text" class="form-control" name="artist" placeholder="Artist name">
-             </div>
+            <div class="form-group">
+                <label for="artist">Artist</label>
+                <select class=" dropdown-toggle" id="inputGroupSelect04" name="artist">
+                  <option selected>Choose Role</option>
+                  <option value="1">Artist</option>
+                  <option value="2">Basata</option>
+                  <option value="3">Listener</option>
+                </select>
+            
+        
+        </div>
 
              <div class="form-group">
                 <label for="Album">Album Name</label>
@@ -98,8 +105,6 @@ input {
                   <option value="trap">Trap</option>
                   <option value="bongo fleva">Bongo fleva</option>
                 </select>
-            
-        
         </div>
     </div>
     <button class="btn btn-lg btn-primary submitButton" type="submit" name="submit">Upload Album</button>

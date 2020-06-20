@@ -17,8 +17,8 @@ class UserSeeder extends Seeder
         $role = Role::where('name', 'artist')->first();
 
         $user = new User();
-        $user->name = 'brown';
-        $user->email = 'a@gmail.com';
+        $user->name = 'cathbert';
+        $user->email = 'brown@gmail.com';
         $user->nickname = 'bees';
         $user->date_of_birth = '1999-02-12';
         $user->organisation_id = 1;

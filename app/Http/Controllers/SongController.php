@@ -90,4 +90,13 @@ class SongController extends Controller
         $pathToFile = storage_path('/app/songs/a.mp3');
         return response()->download($pathToFile);
     }
+
+    public function deleteSong($songId) {
+
+        $song = Song::find($songId);
+        
+        if(!$song)  return back()->with('error' , 'Song deleted');
+                    $song->delete();
+                    return redirect('/song_form');        
+    }
 }

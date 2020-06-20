@@ -50,6 +50,7 @@ Route::get('/artist', function () {
 Route::get('/song', ['uses' => 'SongController@getAllsongs']);
 Route::get('song_view/{songId}', ['uses' => 'SongController@getSong']);
 Route::post('storeSong/{albumId}', ['uses' => 'SongController@postSong']);
+Route::delete('deleteSong/{songId}' ,['uses' => 'SongController@deleteSong']);
 
 //album form
 Route::get('/song_form', function () {
