@@ -15,17 +15,19 @@ use App\Song;
 |
 */
 
-Route::get('', function () {
+Route::get('welcome', function () {
     return view('welcome');
 });
 
 
+Route::get('/', function () {
+    return view('pages.login');
+});
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('pages.dashboard');
 });
 
@@ -94,9 +96,6 @@ Route::get('/verify', function () {
 Route::get('/notify', function () {
     return view('pages.notify');
 });
-Route::get('/login', function () {
-    return view('pages.login');
-});
 Route::get('/profile', function () {
     return view('pages.profile');
 });
@@ -105,6 +104,13 @@ Route::get('/editprofile', function () {
 });
 Route::get('/register', function () {
     return view('pages.register');
-});
+}); 
 
 
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

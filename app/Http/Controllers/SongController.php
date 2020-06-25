@@ -14,17 +14,6 @@ class SongController extends Controller
         return view('pages.song', ['songs' => $songs]);
     }
     
-
-    //get single song
-    // public function getSong($songId){
-    //     $song = Song::find((2));
-    //     if(!$song)
-    //         return response()->json(['error'=>'Song does not found'],404);
-    //         return view('pages.single_song', ['song' => $song]);
-        
-    // }
-
-
     public function getSong($songId){
         $song = Song::find($songId);
 
@@ -97,6 +86,6 @@ class SongController extends Controller
         
         if(!$song)  return back()->with('error' , 'Song deleted');
                     $song->delete();
-                    return redirect('/song_form');        
+                    return redirect('pages.song', ['songs' => $song]);        
     }
 }

@@ -6,7 +6,7 @@
 @endsection
     
 @section('contents')
-          @if(count($songs) > 0)
+         
 <div class="col-lg-12 col-xl-12 stretch-card">
     <div class="card">
       <div class="card-body">
@@ -26,6 +26,7 @@
           </div>
         </div>
         {{-- the design up containing heading and button hover  --}} 
+         @if(count($songs) > 0)
          <div class="table-responsive">
           <table class="table table-hover mb-0">
             <thead>

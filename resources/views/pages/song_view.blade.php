@@ -14,7 +14,7 @@
           <div class="col-lg-5">
             <div class="card">
             <div class="card-image">
-              <img src="{{ asset('assets/images/song.png') }}" height="130px" style="padding-left: 70px" width="200">
+              <img src="{{ asset('assets/images/al.jpg') }}" height="130px"  width="100%">
             </div>
           
           <div class="card-footer">
