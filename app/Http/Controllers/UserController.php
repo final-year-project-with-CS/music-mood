@@ -23,4 +23,25 @@ class UserController extends Controller
            return response()->json(['error' => 'user not found']);
            return response()->json(['user' => $user]);
     }
+
+    public function postUser()
+    {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'email' => 'required|email',
+                'password' => 'required',
+                
+            ]
+        );
+
+        if($validator->fails())
+        return response()->json($validator->error(), 401);
+
+        $user = new User([
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+
+    }
 }

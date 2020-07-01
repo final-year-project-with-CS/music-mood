@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.design')
 @section('contents')
 <div>
     <h4 class="mb-3 mb-md-0">New Realease</h4>

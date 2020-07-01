@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.design')
 @section('contents')
 <div class="row">
     {{-- artist name and pics --}}

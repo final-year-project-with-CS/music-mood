@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.design')
 @section('contents')
 {{-- first row in claim p showing metrics --}}
 <div class="row">

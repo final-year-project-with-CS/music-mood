@@ -21,7 +21,7 @@ Route::get('welcome', function () {
 
 
 Route::get('/', function () {
-    return view('pages.login');
+    return view('auth.login');
 });
 
 
@@ -102,12 +102,13 @@ Route::get('/profile', function () {
 Route::get('/editprofile', function () {
     return view('pages.editprofile');
 });
-Route::get('/register', function () {
-    return view('pages.register');
-}); 
 
 
 
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
