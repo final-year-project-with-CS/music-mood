@@ -1,10 +1,22 @@
 @extends('layouts.app')
 
+
+@section('styles')
+    <style>
+      .wrapper {
+        background-image: linear-gradient(180deg, #070d19, rgb(15, 15, 46),rgb(58, 71, 58), rgb(19, 70, 70));
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+      
+      }
+    </style>
+@endsection
 @section('content')
 
-<div class="main-wrapper" id="app" >
-    <div class="page-wrapper full-page">
-      <div class="page-content d-flex align-items-center justify-content-center">
+<div class="wrapper" id="app" >
+    <div class="wrapper">
+      <div class="page-content mt-5">
 
   <div class="row w-100 mx-0 auth-page">
     <div class="col-md-8 col-xl-6 mx-auto">
@@ -12,10 +24,10 @@
         <div class="row">
           <div class="col-md-4 pr-md-0">
             <div class="auth-left-wrapper">
-               <img src="{{ asset('assets/images/al.jpg') }}" height="500px" width="100%">
+               <img src="{{ asset('assets/images/pics/m.webp') }}" height="500px" width="100%">
             </div>
           </div>
-          <div class="col-md-8 pl-md-0">
+          <div class="col-md-7 pl-md-0">
             <div class="auth-form-wrapper px-4 py-5">
               <a href="#" class="noble-ui-logo logo-light d-block mb-2">Music<span>Mood</span></a>
               <h5 class="text-muted font-weight-normal mb-4">Welcome back! Log in to your account.</h5>

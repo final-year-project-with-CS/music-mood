@@ -1,23 +1,36 @@
 @extends('layouts.app')
 
+
+
+@section('styles')
+    <style>
+      .wrapper {
+        background-image: linear-gradient(180deg, #070d19, rgb(15, 15, 46),rgb(58, 71, 58), rgb(19, 70, 70));
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+      
+      }
+    </style>
+@endsection
 @section('content')
 
 <div class="main-wrapper" id="app">
-    <div class="page-wrapper full-page">
-      <div class="page-content d-flex align-items-center justify-content-center">
+    <div class="wrapper ">
+      <div class="page-content mt-5">
 
   <div class="row w-100 mx-0 auth-page">
     <div class="col-md-8 col-xl-6 mx-auto">
       <div class="card">
             
         <div class="row">
-          <div class="col-md-4 pr-md-0">
+          <div class="col-md-5 pr-md-0">
             <div class="auth-left-wrapper">
-               <img src="{{ asset('assets/images/al.jpg') }}" height="630px" width="100%">
+               <img src="{{ asset('assets/images/pics/fg.webp') }}" height="640px" width="100%">
 
             </div>
           </div>
-          <div class="col-md-8 pl-md-0">
+          <div class="col-md-7 pl-md-0">
             <div class="auth-form-wrapper px-4 py-5">
               <a href="#" class="noble-ui-logo logo-light d-block mb-2 text-center">Music <span> Mood</span></a>
               <h5 class="text-muted font-weight-normal mb-4 text-center">Create a free account.</h5>
@@ -37,7 +50,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="firstname">{{ __('Firstname') }}</label>
-                      <input type="text" class="form-control" @error('firstname') is-invalid @enderror name="first_name" value="{{ old('first_name') }}" required autocomplete="Firstname" autofocus>
+                      <input type="text" class="form-control" @error('firstname') is-invalid @enderror name="firstname"  required autocomplete="Firstname" autofocus>
                       @error('firstname')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -48,7 +61,7 @@
              <div class="col-md-6">
                 <div class="form-group">
                     <label for="surname">{{ __('SurName') }}</label>
-                      <input type="text" class="form-control" @error('surname') is-invalid @enderror name="sur_name" value="{{ old('sur_name') }}" required autocomplete="surname" autofocus>
+                      <input type="text" class="form-control" @error('surname') is-invalid @enderror name="surname" required autocomplete="surname" autofocus>
                       @error('surname')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -97,6 +110,9 @@
                 <div class="mt-3">
                   <button type="submit" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
                     {{ __('Register') }}</button>
+                    <a href="/login" class="btn btn-primary">
+                      {{ __('Login') }}
+                  </a> 
                 </div>
               </form>
             </div>
