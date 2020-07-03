@@ -27,7 +27,6 @@ class SongController extends Controller
     public function postSong(Request $request, $albumId)
     {
          $validator = Validator::make($request->all(),[
-             'artist_name' =>'required',
              'time'=> 'required',
              'album_id' => 'required',
              'genre' => 'required',
@@ -58,12 +57,13 @@ class SongController extends Controller
            }
 
               $song = new Song();
-              $song->name = $request->input('artist_name');
+              $song->name = $filename;
               $song->time = $request->input('time');
               $song->song_file = $this->songPath;
               $song->artist_id = 1;
               $song->album_id = $request->input('album_id');
               $song->genre = $request->input('genre');
+              $song->status = 'pending';
               $song->play_count = $request->input('play_count');
               $album->songs()->save($song);
 

@@ -117,18 +117,23 @@
         </li>
         <li class="nav-item nav-category">PlAYLIST</li>
         <li class="nav-item nav-category">STORE</li>
+        @role('Admin')
+
         <li class="nav-item ">
             <a href="/upload" class="nav-link">
                 <i class="link-icon" data-feather="upload-cloud"></i>
                 <span class="link-title">Upload</span>
             </a>
         </li>
+
         <li class="nav-item ">
             <a href="/download" class="nav-link">
                 <i class="link-icon" data-feather="download"></i>
                 <span class="link-title">Download</span>
             </a>
         </li>
+        @endrole
+
         <li class="nav-item ">
             <a href="/claimpayment" class="nav-link">
                 <i class="link-icon" data-feather="dollar-sign"></i>

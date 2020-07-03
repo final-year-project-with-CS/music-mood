@@ -66,13 +66,13 @@ input {
     <div class="row">
         <div class="col-lg-3">
             <div class="card">
-                <img src="assets\images\song.png" height="200px" width="100%" alt="">      
+            <img src="{{ asset('assets/images/pics/g.webp') }}" height="200px" width="100%" alt="">      
                 <div class="d-flex justify-content-center">
                     <div class="btn btn-mdb-color btn-rounded float-left b">
                       <span></span>
                       <label class="label" for="file">
                         <i class="link-icon" data-feather="camera"></i>
-                        Upload Image
+                        Edit Image
                           <input type="file" id="file" name="cover">
                       </label>
                     </div>
@@ -113,8 +113,5 @@ input {
 
 
 </div>
-@endsection
-
-@section('scripts')
-
+</div>
 @endsection

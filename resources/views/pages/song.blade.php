@@ -32,6 +32,8 @@
                 <th class="pt-0">Time</th>
                 <th class="pt-0">Genre</th>
                 <th class="pt-0">Plays</th>
+                <th class="pt-0">Status</th>
+
               </tr>
             </thead>
             <tbody>
@@ -42,6 +44,7 @@
               <td>{{ $song->time }}</td>
               <td>{{ $song->genre }}</td>
               <td>{{ $song->play_count }}</td>
+              <td><button href="" class="btn btn-sm btn-danger"><span>pending</span></button></td>
               </tr>
               @endforeach
             </tbody>

@@ -67,13 +67,13 @@ input {
     <div class="row">
         <div class="col-lg-3">
             <div class="card">
-                <img src="assets\images\song.png" height="200px" width="100%" alt="">      
+                <img src="{{ asset('assets/images/song.png') }}" height="200px" width="100%" alt="">      
                 <div class="d-flex justify-content-center">
                     <div class="btn btn-mdb-color btn-rounded float-left b">
                       <span></span>
                       <label class="label" for="file">
                         <i class="link-icon" data-feather="camera"></i>
-                        Upload Song
+                        upload song
                           <input type="file" id="file" name="song_file">
                       </label>
                     </div>
@@ -82,7 +82,7 @@ input {
         </div>
         <div class="col-lg-9">
      <div class="row">
-     <div class="col-lg-6">
+     <div class="col-lg-10">
                     <div class="form-group">
                         <label for="album">Album</label>
                         <select class=" dropdown-toggle" id="inputGroupSelect04" name="album_id">
@@ -94,23 +94,23 @@ input {
                         </select>
                 </div>
                 </div>
-    
+{{--     
               <div class="col-lg-6">
                 <div class="form-group">
                     <label for="Album">artist Name</label>
                     <input type="text" class="form-control" name="artist_name" placeholder="artist name">
                 </div>
-              </div>
+              </div> --}}
     
      </div>
             <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-5">
         <div class="form-group">
             <label for="Album">time</label>
             <input type="text" class="form-control" name="time" placeholder="time">
         </div>
     </div>
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <div class="form-group">
                         <label for="Album">duration</label>
                         <input type="text" class="form-control" name="play_count" placeholder="play_count">
@@ -122,7 +122,7 @@ input {
            
 <div class="row">
     
-    <div class="col-lg-6">
+    <div class="col-lg-10">
         <div class="form-group">
             <label for="genre">Genre</label>
             <select class=" dropdown-toggle" id="inputGroupSelect04" name="genre">
@@ -141,6 +141,7 @@ input {
     <button class="btn btn-lg btn-primary submitButton" type="submit" name="submit">Upload Song</button>
 </form>
     
+</div>
 </div>
 @endsection
 

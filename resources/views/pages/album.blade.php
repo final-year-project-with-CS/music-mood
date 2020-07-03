@@ -28,7 +28,7 @@
 @if(count($albums) > 0)
 <div class="row">
     @foreach ($albums as $album)
-    <div class="col-lg-4">
+    <div class="col-lg-4 mt-3">
         <div class="card album">
         <img src="{{ asset($album->cover) }}" class="card-img-top" height="300" width="100%" alt="pic">
             <div class="card-body">

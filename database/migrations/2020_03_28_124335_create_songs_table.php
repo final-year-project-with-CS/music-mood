@@ -22,6 +22,7 @@ class CreateSongsTable extends Migration
             $table->string('genre');
             $table->string('song_file');
             $table->string('play_count');
+            $table->string('status');
             $table->timestamps();
         });
     }

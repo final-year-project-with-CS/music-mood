@@ -12,7 +12,7 @@ class AlbumController extends Controller
     //get all albums
     public function getAllalbums()
     {
-        $albums = Album::orderBy('name')->paginate(3);
+        $albums = Album::orderBy('name')->paginate(6);
         foreach ($albums as $album) {
             $album->songs;
         }

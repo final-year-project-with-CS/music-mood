@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
-use App\Role;
 
 class UserSeeder extends Seeder
 {
@@ -13,21 +12,13 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //artist
-        $role = Role::where('name', 'artist')->first();
-
+        
         $user = new User();
-        $user->name = 'cathbert';
-        $user->email = 'brown@gmail.com';
-        $user->nickname = 'bees';
-        $user->date_of_birth = '1999-02-12';
-        $user->organisation_id = 1;
-        $user->avatar = 'pics';
-        $user->uuid = 2;
-        $user->is_active = true;
-        $user->password = bcrypt('artists');
+        $user->name = 'Admin';
+        $user->email = 'Admin@gmail.com';
+        $user->password = bcrypt('admin');
         $user->save();
-        $user->roles()->attach($role);
+    
 
         //listener
         // $role = Role::where('name', 'listener')->first();

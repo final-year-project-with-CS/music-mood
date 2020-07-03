@@ -13,11 +13,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             // AlbumSeeder::class,
+            UserSeeder::class,
             RoleSeeder::class,
-            OrganizationSeeder::class,
+            // OrganizationSeeder::class,
             // SongSeeder::class,
-            // UserSeeder::class
-
+            
         ]);
     }
 }

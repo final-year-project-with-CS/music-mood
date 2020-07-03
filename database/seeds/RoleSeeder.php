@@ -2,8 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 use Psy\Util\Str;
-use App\Role;
+use App\User;
 
 class RoleSeeder extends Seeder
 {
@@ -15,19 +16,14 @@ class RoleSeeder extends Seeder
     public function run()
     {
        
-       $role = new Role();
-       $role->name = "Admin";
-       $role->description = "A system adminstrator";
-       $role->save();
+        $role = Role::create(['name' => 'Admin']);
+        $role = Role::create(['name' => 'Artist']);
+        $role = Role::create(['name' => 'Listener']);
 
-       $role = new Role();
-       $role->name = "artist";
-       $role->description = "owner of the song";
-       $role->save();
+        $user = User::find(1);
 
-       $role = new Role();
-       $role->name = "listener";
-       $role->description = "plays songs";
-       $role->save();
+        $user->assignRole('Admin');
+
+
     }
-}
+}   
