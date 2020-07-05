@@ -14,11 +14,11 @@
           <div class="cover-body d-flex justify-content-between align-items-center">
             <div>
               <img class="profile-pic" src="..\assets\images\faces\face1.jpg" alt="profile">
-              <span class="profile-name">Amiah Burton</span>
+              <span class="profile-name">{{ Auth::user()->name }}</span>
             </div>
             <div class="d-none d-md-block">
-              <button class="btn btn-primary btn-icon-text btn-edit-profile">
-                <i data-feather="edit" class="btn-icon-prepend"></i> Edit
+              <button class="btn btn-success btn-icon-text btn-edit-profile" data-toggle="modal" data-target="#requestModal" >
+                <i data-feather="user" class="btn-icon-prepend"></i> Request to be an Artist
               </button>
             </div>
           </div>
@@ -83,6 +83,89 @@
             </table>
           </div>
         </div>
+        <!-- Artist modal -->
+<div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="requestModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Request To Be An Artist</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="storeArtist" method="POST">
+          @csrf
+          <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="fname">Firstname</label>
+              <input type="text" name="fname" class="form-control">
+            </div>
+    
+          </div>  
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="lname">Lastname</label>
+              <input type="text" name="lname" class="form-control">
+            </div>
+    
+          </div>  
+          </div> 
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="uname">Username</label>
+                <input type="text" name="uname" class="form-control">
+              </div>
+      
+            </div>  
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="htown">Hometown</label>
+                <input type="text" name="htown" class="form-control">
+              </div>
+      
+            </div>  
+            </div> 
+
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="label">Label</label>
+                  <input type="text" name="label" class="form-control">
+                </div>
+              
+              </div>  
+              <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <select class=" dropdown-toggle"  id="inputGroupSelect04" name="genre">
+                      <option selected>Choose Genre</option>
+                      <option value="pop">Pop</option>
+                      <option value="trap">Trap</option>
+                      <option value="reggae">Reggae</option>
+                      <option value="Afrobeats">Afrobeats</option>
+                      <option value="Rock">Rock</option>
+                      <option value="Country">Country</option>
+                      <option value="Gospel">Gospel</option>
+                        
+                    </select>
+                
+            
+            </div> 
+              </div> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Request</button>
+      </div>
+    </form>
+
+    </div>
+  </div>
+</div>
+      </div>
  {{--album collapse--}}
         <div class="col-lg-4">
           <div class="card card-body collapse" id="albumCollapse">

@@ -75,6 +75,9 @@ Route::get('/album_form', function () {
 });
 
 
+//artists
+Route::get('/verify', ['uses' => 'ArtistController@getArtists']);
+Route::post('/storeArtist', ['uses' => 'ArtistController@postArtist']);
 
 
 Route::get('/upload', function () {
@@ -89,8 +92,8 @@ Route::get('/claimpayment', function () {
     return view('pages.claimpayment');
 });
 
-Route::get('/verify', function () {
-    return view('pages.verify');
+Route::get('/verifySong', function () {
+    return view('pages.verify_song');
 });
 
 Route::get('/notify', function () {

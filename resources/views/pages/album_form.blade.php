@@ -73,7 +73,7 @@ input {
                       <label class="label" for="file">
                         <i class="link-icon" data-feather="camera"></i>
                         Edit Image
-                          <input type="file" id="file" name="cover">
+                          <input type="file"  name="cover">
                       </label>
                     </div>
                   </div>         
@@ -100,10 +100,13 @@ input {
             <div class="form-group">
                 <label for="genre">Genre</label>
                 <select class=" dropdown-toggle" id="inputGroupSelect04" name="genre">
-                  <option selected>Choose Genre</option>
-                  <option value="pop">Pop</option>
-                  <option value="trap">Trap</option>
-                  <option value="bongo fleva">Bongo fleva</option>
+                    <option value="pop">Pop</option>
+                    <option value="trap">Trap</option>
+                    <option value="reggae">Reggae</option>
+                    <option value="Afrobeats">Afrobeats</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Country">Country</option>
+                    <option value="Gospel">Gospel</option>
                 </select>
         </div>
     </div>

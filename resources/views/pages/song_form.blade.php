@@ -62,7 +62,7 @@ input {
     <h5 class="display-5 text-center mb-5">
         Enter Song Details
     </h5>
-<form action=" /storeSong/{albumId} " method="POST" enctype="multipart/form-data">
+<form action="/storeSong/{albumId} " method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-lg-3">
@@ -129,7 +129,12 @@ input {
               <option selected>Choose Genre</option>
               <option value="pop">Pop</option>
               <option value="trap">Trap</option>
-              <option value="bongo fleva">Bongo fleva</option>
+              <option value="reggae">Reggae</option>
+              <option value="Afrobeats">Afrobeats</option>
+              <option value="Rock">Rock</option>
+              <option value="Country">Country</option>
+              <option value="Gospel">Gospel</option>
+
             </select>
         
     

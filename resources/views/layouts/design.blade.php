@@ -61,14 +61,14 @@
   </div>
   <div class="sidebar-body">
     <ul class="nav">
-        <li class="nav-item nav-category">Main</li>
+        <li class="nav-item nav-category">MUSIC MOOD</li>
         <li class="nav-item active">
             <a href="/dashboard" class="nav-link">
                 <i class="link-icon" data-feather="box"></i>
                 <span class="link-title">Dashboard</span>
             </a>
         </li>
-        <li class="nav-item nav-category">MUSIC MOOD</li>
+        <li class="nav-item nav-category">MAIN</li>
 
         <li class="nav-item ">
             <a href="/browse" class="nav-link">
@@ -115,10 +115,9 @@
             </a>
 
         </li>
-        <li class="nav-item nav-category">PlAYLIST</li>
+        @role('Listener')
         <li class="nav-item nav-category">STORE</li>
-        @role('Admin')
-
+  
         <li class="nav-item ">
             <a href="/upload" class="nav-link">
                 <i class="link-icon" data-feather="upload-cloud"></i>
@@ -132,6 +131,26 @@
                 <span class="link-title">Download</span>
             </a>
         </li>
+
+        @endrole
+
+        @role('Admin')
+        <li class="nav-item nav-category">Admin</li>
+        <li class="nav-item ">
+          <a href="/verify" class="nav-link">
+              <i class="link-icon" data-feather="check"></i>
+              <span class="link-title">Verify Artists</span>
+
+          </a>
+      </li>
+        <li class="nav-item ">
+            <a href="/verifySong" class="nav-link">
+                <i class="link-icon" data-feather="upload-cloud"></i>
+                <span class="link-title">verify songs</span>
+            </a>
+        </li>
+
+      
         @endrole
 
         <li class="nav-item ">
@@ -148,13 +167,7 @@
 
             </a>
         </li>
-        <li class="nav-item ">
-            <a href="/verify" class="nav-link">
-                <i class="link-icon" data-feather="check"></i>
-                <span class="link-title">Verify</span>
-
-            </a>
-        </li>
+        
     </ul>
 </div>
 </nav>
