@@ -16,8 +16,15 @@ class Artist extends Model
             'user_name',
             'home_town',
             'label',
-            'genre'
+            'genre',
+            'status'
     ];
 
     protected $timestamp = true;
+
+
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

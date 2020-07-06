@@ -49,12 +49,16 @@ class User extends Authenticatable
     public function albums(){
         return $this->hasMany(Album::class);
     }
-    public function organisations(){
-        return $this->belongsTo(Organization::class);
-    }
+    // public function organisations(){
+    //     return $this->belongsTo(Organization::class);
+    // }
     public function roles(){
         return $this->belongsToMany(Role::class);
     }
+    public function artist(){
+        return $this->hasOne(Artist::class);
+    }
+    
 
 
 }

@@ -50,12 +50,12 @@ Route::get('/artist', function () {
 
 //songs
 Route::get('/song', ['uses' => 'SongController@getAllsongs']);
-Route::get('song_view/{songId}', ['uses' => 'SongController@getSong']);
+Route::get('songView/{songId}', ['uses' => 'SongController@getSong']);
 Route::post('storeSong/{albumId}', ['uses' => 'SongController@postSong']);
 Route::delete('deleteSong/{songId}' ,['uses' => 'SongController@deleteSong']);
 
 //album form
-Route::get('/song_form', function () {
+Route::get('/song_form', function () { 
     return view('pages.song_form');
 });
 
@@ -78,6 +78,8 @@ Route::get('/album_form', function () {
 //artists
 Route::get('/verify', ['uses' => 'ArtistController@getArtists']);
 Route::post('/storeArtist', ['uses' => 'ArtistController@postArtist']);
+Route::post('/updateArtist', ['uses' => 'ArtistController@updateRequest']);
+
 
 
 Route::get('/upload', function () {

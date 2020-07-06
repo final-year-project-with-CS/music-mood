@@ -40,7 +40,7 @@
               @foreach ($songs as $song)
               <tr>
               <td>{{ $song->id }}</td>
-              <td><a class="nav-link text-primary " href="/song_view/{{ $song->id }}">{{ $song->name }}</a></td>
+              <td><a class="nav-link text-primary " href="/songView/{{ $song->id }}">{{ $song->name }}</a></td>
               <td>{{ $song->time }}</td>
               <td>{{ $song->genre }}</td>
               <td>{{ $song->play_count }}</td>

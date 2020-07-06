@@ -20,7 +20,7 @@ class SongController extends Controller
         if(!$song) 
         return response()->json(['error'=>'Song does not found'],404);
         
-        return view('pages.song_view', ['song' => $song]);
+        return view('pages.songView', ['song' => $song]);
     }
 
     //post song

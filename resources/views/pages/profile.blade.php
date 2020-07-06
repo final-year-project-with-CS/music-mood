@@ -13,13 +13,18 @@
           </figure>
           <div class="cover-body d-flex justify-content-between align-items-center">
             <div>
-              <img class="profile-pic" src="..\assets\images\faces\face1.jpg" alt="profile">
+              <img class="profile-pic" src="..\assets\images\faces\face3.jpg" alt="profile">
               <span class="profile-name">{{ Auth::user()->name }}</span>
             </div>
             <div class="d-none d-md-block">
-              <button class="btn btn-success btn-icon-text btn-edit-profile" data-toggle="modal" data-target="#requestModal" >
-                <i data-feather="user" class="btn-icon-prepend"></i> Request to be an Artist
+              @if(!Auth::user()->artist)
+              <button class="btn btn-primary btn-icon-text btn-edit-profile" data-toggle="modal" data-target="#requestModal">
+                <i data-feather="user" class="btn-icon-prepend"></i> Request to be an Artist 
               </button>
+              @else
+              <a href="#" class="btn btn-block btn-danger">{{Auth::user()->artist->status}}
+              </a>
+              @endif
             </div>
           </div>
         </div>
