@@ -27,12 +27,17 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dashboard', function () {
-    return view('pages.dashboard');
-});
+// Route::get('/dashboard', function () {
+//     return view('pages.dashboard');
+// });
+//dashboard routes
+Route::get('/dashboard', ['uses' => 'PagesController@dashboard']);
+
 
 //browses
 Route::get('/browse', ['uses' => 'PagesController@browses']);
+//artist
+Route::get('/artist', ['uses' => 'PagesController@artists']);
 
 
 Route::get('/radio', function () {
@@ -43,9 +48,11 @@ Route::get('/recentlyadded', function () {
     return view('pages.recentlyadded');
 });
 
-Route::get('/artist', function () {
-    return view('pages.artist');
-});
+
+
+// Route::get('/artist', function () {
+//     return view('pages.artist');
+// });
 
 
 //songs
@@ -113,10 +120,7 @@ Route::get('/editprofile', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+//authentication routes
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

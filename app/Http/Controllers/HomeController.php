@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Album;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard');
+        $dashboards = Album::all();
+        return view('pages.dashboard', ['dashboards' => $dashboards]);
     }
 }

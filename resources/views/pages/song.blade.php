@@ -28,7 +28,7 @@
             <thead>
               <tr>
                 <th class="pt-0">#</th>
-                <th class="pt-0">SongNames</th>
+                <th class="pt-0">Names</th>
                 <th class="pt-0">Time</th>
                 <th class="pt-0">Genre</th>
                 <th class="pt-0">Plays</th>

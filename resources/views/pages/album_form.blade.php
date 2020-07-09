@@ -85,8 +85,7 @@ input {
                 <select class=" dropdown-toggle" id="inputGroupSelect04" name="artist">
                   <option selected>Choose Role</option>
                   <option value="1">Artist</option>
-                  <option value="2">Basata</option>
-                  <option value="3">Listener</option>
+                
                 </select>
             
         

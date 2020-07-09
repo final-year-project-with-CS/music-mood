@@ -20,85 +20,30 @@
               </div>
             </div>
           </div>
+          @if(count($artists) > 0)
           <div class="d-flex flex-column">
-            <a href="#" class="d-flex align-items-center border-bottom pb-3">
-              <div class="mr-3">
-                <img src="assets\images\faces\face2.jpg" class="rounded-circle wd-35" alt="user">
-              </div>
-              <div class="w-100 artist" data-artist="leonardo payne">
-                <div class="d-flex justify-content-between">
-                  <h6 class="text-body mb-2">Leonardo Payne</h6>
-                  <p class="text-muted tx-12">12.30 PM</p>
-                </div>
-                <p class="text-muted tx-13">Hey! there I'm available...</p>
-              </div>
-            </a>
-            <a href="#" class="d-flex align-items-center border-bottom py-3">
-              <div class="mr-3">
-                <img src="assets\images\faces\face3.jpg" class="rounded-circle wd-35" alt="user">
-              </div>
-              <div class="w-100 artist" data-artist="carl Henson">
-                <div class="d-flex justify-content-between">
-                  <h6 class="text-body mb-2">Carl Henson</h6>
-                  <p class="text-muted tx-12">02.14 AM</p>
-                </div>
-                <p class="text-muted tx-13">I've finished it! See you so..</p>
-              </div>
-            </a>
-            <a href="#" class="d-flex align-items-center border-bottom py-3">
-              <div class="mr-3">
-                <img src="assets\images\faces\face4.jpg" class="rounded-circle wd-35" alt="user">
-              </div>
-              <div class="w-100 artist" data-artist="Jensen Combs">
-                <div class="d-flex justify-content-between">
-                  <h6 class="text-body mb-2">Jensen Combs</h6>
-                  <p class="text-muted tx-12">08.22 PM</p>
-                </div>
-                <p class="text-muted tx-13">This template is awesome!</p>
-              </div>
-            </a>
-            <a href="#" class="d-flex align-items-center border-bottom py-3">
-              <div class="mr-3">
-                <img src="assets\images\faces\face5.jpg" class="rounded-circle wd-35" alt="user">
-              </div>
-              <div class="w-100 artist" data-artist="Amiah Burton">
-                <div class="d-flex justify-content-between">
-                  <h6 class="text-body mb-2">Amiah Burton</h6>
-                  <p class="text-muted tx-12">05.49 AM</p>
-                </div>
-                <p class="text-muted tx-13">Nice to meet you</p>
-              </div>
-            </a>
-            <a href="#" class="d-flex align-items-center border-bottom py-3">
-              <div class="mr-3">
-                <img src="assets\images\faces\face6.jpg" class="rounded-circle wd-35" alt="user">
-              </div>
-              <div class="w-100 artist" data-artist="Yeretzi Mayo">
-                <div class="d-flex justify-content-between">
-                  <h6 class="text-body mb-2">Yaretzi Mayo</h6>
-                  <p class="text-muted tx-12">01.19 AM</p>
-                </div>
-                <p class="text-muted tx-13">Hey! there I'm available...</p>
-              </div>
-            </a>
+            @foreach ($artists as $artist)
+                
             <a href="#" class="d-flex align-items-center border-bottom py-3">
                 <div class="mr-3">
-                  <img src="assets\images\faces\face2.jpg" class="rounded-circle wd-35" alt="user">
+                  <img src="assets\images\faces\face1.jpg" class="rounded-circle wd-35" alt="user">
                 </div>
                 <div class="w-100 artist" data-artist="Yaretzi Mayo">
                   <div class="d-flex justify-content-between">
-                    <h6 class="text-body mb-2">Yaretzi Mayo</h6>
+                    <h6 class="text-body mb-2">{{ $artist->user_name }}</h6>
                     <p class="text-muted tx-12">01.19 AM</p>
                   </div>
-                  <p class="text-muted tx-13">Hey! there I'm available...</p>
+                <p class="text-muted tx-13">{{ $artist->label }}</p>
                 </div>
               </a>
+              @endforeach
 
 
           </div>
         </div>
       </div>
     </div>
+    @endif
     {{-- artist names and pic --}}
 
     <div class="col" id="hide" style="display:none">
@@ -116,22 +61,22 @@
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td>NobleUI</td>
+                        <td>Diamond platnumz</td>
                         <td>Released</td>
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td>NobleUI</td>
+                        <td>joeboy</td>
                         <td>Released</td>
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td>NobleUI</td>
+                        <td>Roddy Rich</td>
                         <td>Released</td>
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td>NobleUI</td>
+                        <td>Aslay</td>
                         <td>Released</td>
                     </tr>
                 </table>

@@ -13,9 +13,10 @@
           </figure>
           <div class="cover-body d-flex justify-content-between align-items-center">
             <div>
-              <img class="profile-pic" src="..\assets\images\faces\face3.jpg" alt="profile">
+              <img class="profile-pic" src="..\assets\images\faces\face6.jpg" alt="profile">
               <span class="profile-name">{{ Auth::user()->name }}</span>
             </div>
+            @role('Listener')
             <div class="d-none d-md-block">
               @if(!Auth::user()->artist)
               <button class="btn btn-primary btn-icon-text btn-edit-profile" data-toggle="modal" data-target="#requestModal">
@@ -26,8 +27,10 @@
               </a>
               @endif
             </div>
+            @endrole
           </div>
         </div>
+        
         <div class="header-links">
           <ul class="links d-flex align-items-center mt-3 mt-md-0">
             <li class="header-link-item d-flex align-items-center active">

@@ -62,22 +62,22 @@
         </tr>
         <tr>
             <td>1</td>
-            <td>NobleUI</td>
+            <td>UPCOMING</td>
             <td>Released</td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>NobleUI</td>
+            <td>2</td>
+            <td>UPCOMING</td>
             <td>Released</td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>NobleUI</td>
+            <td>3</td>
+            <td>UPCOMING</td>
             <td>Released</td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>NobleUI</td>
+            <td>4</td>
+            <td>UPCOMING</td>
             <td>Released</td>
         </tr>
     </table>

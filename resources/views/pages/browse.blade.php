@@ -21,9 +21,13 @@
        @endforeach
 
 </div>
+<div class="paginate float-right mt-2">
+  {{ $browses->links() }}
+
+</div>
 <br>
 @else
-<p>No albums</p>
+<p>No content </p>
 @endif
 
 
