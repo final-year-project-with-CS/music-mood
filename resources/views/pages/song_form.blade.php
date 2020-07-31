@@ -83,7 +83,7 @@ input {
         <div class="col-lg-9">
      <div class="row">
      <div class="col-lg-10">
-                    <div class="form-group">
+                <div class="form-group">
                         <label for="album">Album</label>
                         <select class=" dropdown-toggle" id="inputGroupSelect04" name="album_id">
                           <option selected>Choose Album</option>
@@ -94,13 +94,6 @@ input {
                         </select>
                 </div>
                 </div>
-{{--     
-              <div class="col-lg-6">
-                <div class="form-group">
-                    <label for="Album">artist Name</label>
-                    <input type="text" class="form-control" name="artist_name" placeholder="artist name">
-                </div>
-              </div> --}}
     
      </div>
             <div class="row">
@@ -121,7 +114,6 @@ input {
 
            
 <div class="row">
-    
     <div class="col-lg-10">
         <div class="form-group">
             <label for="genre">Genre</label>
@@ -134,10 +126,7 @@ input {
               <option value="Rock">Rock</option>
               <option value="Country">Country</option>
               <option value="Gospel">Gospel</option>
-
             </select>
-        
-    
     </div>
     </div>
 </div>

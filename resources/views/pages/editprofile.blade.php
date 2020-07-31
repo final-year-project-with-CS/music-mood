@@ -49,18 +49,7 @@
         </div>
       </div>
       <br>
-      {{-- this is a div for collapse in timeline --}}
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="card">
-                  <div class="card-body">
-                      <div class="collapse"  id="collapseBasic" >
-                          hoze
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+    
 
     </div>
   </div>

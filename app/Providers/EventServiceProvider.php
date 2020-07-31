@@ -18,7 +18,12 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        \App\Events\UploadedSongEvent::class => [
+            \App\Listeners\TrasferFileAPi::class,
+        ]
     ];
+
+
 
     /**
      * Register any events for your application.

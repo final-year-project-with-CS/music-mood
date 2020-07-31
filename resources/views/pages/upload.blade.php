@@ -61,7 +61,7 @@ input {
     <a href="/song_form" class="col-lg-5">
       <div class="card">
         <div class="card-body">
-          <img src="{{ asset('assets/images/pics/b.webp') }}" height="300" width="100%" alt="img">
+          <img src="{{ asset('assets/images/song.png') }}" height="300" width="100%" alt="img">
           <div class="card-title text-center">
             Songs
           </div>
@@ -71,7 +71,7 @@ input {
     <a href="/album_form" class="col-lg-5">
       <div class="card">
         <div class="card-body">
-          <img src="{{ asset('assets/images/pics/df.webp') }}" height="300" width="100%" alt="img">
+          <img src="{{ asset('assets/images/alb1.webp') }}" height="300" width="100%" alt="img">
           <div class="card-title text-center">
             Albums/Ep
           </div>

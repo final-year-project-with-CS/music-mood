@@ -6,9 +6,18 @@ use App\Song;
 use App\Album;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Events\UploadedSongEvent;
+use GuzzleHttp\Client;
+use Exception;
+
+
 
 class SongController extends Controller
 {
+    public function __construct()
+{
+    set_time_limit(8000000);
+}
     public function getAllsongs(){
         $songs =  Song::all();
         return view('pages.song', ['songs' => $songs]);
@@ -67,6 +76,31 @@ class SongController extends Controller
               $song->play_count = $request->input('play_count');
               $album->songs()->save($song);
 
+              
+            // event(new UploadedSongEvent());
+            $client = new Client([
+                // Base URI is used with relative requests
+                'base_uri' => 'http://127.0.0.1:8080',
+                // You can set any number of default request options.
+                'timeout'  => 0.5,
+            ]);
+            
+            // dd($client);
+            try {
+              $body = fopen($this->songPath, 'r');
+              $r =  $client->post('http://127.0.0.1:8080/file', ['file' => $body]);    
+    
+            }
+            catch (GuzzleHttp\Exception\ClientException $e) {
+                $response = $e->getResponse();
+                $responseBodyAsString = $response->getBody()->getContents();
+            }
+            catch (Exception $e) {
+                return $e;
+            }
+    
+    
+            return response()->json(["results" => $r]);
               return redirect('/song_form');
     }
 
@@ -77,6 +111,7 @@ class SongController extends Controller
         }
 
         $pathToFile = storage_path('/app/songs/a.mp3');
+
         return response()->download($pathToFile);
     }
 

@@ -1,80 +1,136 @@
 @extends('layouts.design')
 
+@section('styles')
+   <style>
+       ul {
+           list-style: none
+       }
+   </style>
+@endsection
 @section('contents')
 
-<div class="container"> 
-  
-   <div class="row mt-5">
-        <div class="col-lg-10 col-sm-6 col-md-6">
-          <div class="card">
-           <div class="row">
-          <div class="col-lg-5">
-            <div class="card">
-            <div class="card-image">
-              <img src="{{ asset('assets/images/pics/yl.webp') }}" height="160px"  width="100%">
+
+<div class="table-responsive">
+ <table class="table table-hover mb-0">
+   <thead>
+     <tr>
+       <th class="pt-0">#</th>
+       <th class="pt-0">Username</th>
+       <th class="pt-0">Song</th>
+       <th class="pt-0">Abusive words</th>
+       <th class="pt-0">percentage</th>
+       <th class="pt-0">genre</th>
+       <th class="pt-0">status</th>
+
+
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+     <td>1</td>
+     <td><a class="nav-link text-primary ">chin bees</a></td>
+     <td>nasebenza</td>
+     <td><button class="open-RequestDialog btn btn-block btn-primary" data-toggle="modal" data-id="" data-target="#abusiveModal">Abusives</button>
+        <td>50%</td>
+     <td>Trap</td>
+     <td><button class="open-RequestDialog btn btn-block btn-danger-muted" data-toggle="modal" data-id="" data-target="#requestModal">Pending</button>
+    </td>
+     </tr>
+   </tbody>
+ </table>
+   {{-- <p>Artists not found</p> --}}
+</div>
+
+
+      <!-- abusive words modal -->
+      <div class="modal fade" id="abusiveModal" tabindex="-1" role="dialog" aria-labelledby="abusiveModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Abusive Words</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-          
-          <div class="card-footer ">
-                      <div class="row">
-                        <div class="col-md-6 col-lg-8 col-xl-10">
-                          <audio controls duration>  
-                            <source src="{{ asset($song->song_file) }}" type="audio/mpeg">
-                          </audio>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul>
+                            <li>sex</li>
+                            <li>fuck</li>
+                            <li>nyege</li>
+                            <li>widh</li>
+                            <li>green</li>    
+                            </ul>   
+                    </div>
+                    <div class="col-sm-6">
+                        <ul>
+                            <li>sex</li>
+                            <li>fuck</li>
+                            <li>nyege</li>
+                            <li>widh</li>
+                            <li>green</li>    
+                            </ul>   
+                    </div>
+                </div>
+            </div>
 
-                        </div>
-                      </div>
+      
           </div>
-         </div>
-     </div>
-     <div class="col-lg-5">
-       <div class="row">
-             <div class="col">
-             <h5 class="display-5 mt-5 text-success">{{ $song->name }}</h5>
-                          <div class="col-lg-6">
-             {{-- <h3 class="display-4 mt-1 text-success  "><b>mp3</b></h3> --}}
-                    <h6 class="display-6 text-secondary mt-1">Release Date:  <i>{{ $song->created_at }}</i></h6>
-            <p class="text-muted mt-1">#{{ $song->genre }}</p>  
-              </div>     
-       </div>
-   </div>
-  </div>
-
-  
-  </div>
-  </div>
-               
-  </div>
-        
-</div>
-
-{{-- 
-<div class="row mt-5">
-  <div class="col-lg-8">
-    <div class="player">
-      <img src="{{ asset('assets/images/pics/yl.webp') }}" height="30px" width="30px" alt="">
-      <div class="info">
-        <div class="name">rockstar</div>
-        <div class="singer">Roddy rich</div>
-        <div class="btns">
-           <div class="iconfont play-pause icon-player"></div>
-           <div class="iconfont next icon-next"></div>
         </div>
-        <div class="progress">
+      </div>
 
+      <!-- Artist modal -->
+      <div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="requestModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Artist Request</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <form action="updateArtist" method="POST">
+                @csrf 
+                <input type="text" id="artistId" name="artistId" hidden>
+                 <div class="form-group">
+                  <select class=" dropdown-toggle btn btn-block btn-danger" id="requestId" name="request">
+                    <option selected>requested</option>
+                      <option value="approved">approve</option>
+                      <option value="pending">pending</option>
+                      <option value="rejected">reject</option>
+                         </select>
+                </div>
+              
+                    
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+          </form>
+      
+          </div>
         </div>
-   
-  </div>
-    </div>
-  </div>
-</div> --}}
+      </div>
+          
 
 
 
-</div>
+
+
 @endsection
 
 @section('scripts')
-    <script>
-      var aud = $('aud')
-    </script>
+<script>
+  $(document).on("click", ".open-RequestDialog", function () {
+     var myRequestId = $(this).data('id');
+     console.log(myRequestId);
+     $(".modal-body #artistId").val( myRequestId );
+     // As pointed out in comments, 
+     // it is unnecessary to have to manually call the modal.
+     // $('#addBookDialog').modal('show');
+});
+</script>
+
 @endsection

@@ -66,13 +66,13 @@ input {
     <div class="row">
         <div class="col-lg-3">
             <div class="card">
-            <img src="{{ asset('assets/images/pics/g.webp') }}" height="200px" width="100%" alt="">      
+            <img src="{{ asset('assets/images/av2.png') }}" id="blah"height="200px" width="100%" alt="">      
                 <div class="d-flex justify-content-center">
                     <div class="btn btn-mdb-color btn-rounded float-left b">
                       <span></span>
                       <label class="label" for="file">
                         <i class="link-icon" data-feather="camera"></i>
-                        Edit Image
+                        Upload Image
                           <input type="file"id="file" name="cover">
                       </label>
                     </div>
@@ -117,4 +117,26 @@ input {
 
 </div>
 </div>
+@endsection
+
+
+@section('scripts')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e) {
+      $('#blah').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
+}
+
+$("#file").change(function() {
+  readURL(this);
+});
+</script>
 @endsection
