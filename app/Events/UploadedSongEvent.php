@@ -13,15 +13,17 @@ use Illuminate\Queue\SerializesModels;
 class UploadedSongEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
+    public $song;
+
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($song)
     {
-        //
+        $this->song = $song;
     }
 
     /**

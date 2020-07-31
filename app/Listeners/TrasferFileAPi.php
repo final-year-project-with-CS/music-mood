@@ -6,10 +6,13 @@ use App\Events\UploadedSongEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use GuzzleHttp\Client;
-use Exception;
+use App\Abusive;
+use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
+
 
 class TrasferFileAPi
 {
+ 
     /**
      * Create the event listener.
      *
@@ -26,31 +29,29 @@ class TrasferFileAPi
      * @param  UploadedSongEvent  $event
      * @return void
      */
-    public function handle(UploadedSongEvent $event)
+    public function handle($event)
     {
-        $client = new Client([
-            // Base URI is used with relative requests
-            'base_uri' => 'http://127.0.0.1:8080',
-            // You can set any number of default request options.
-            'timeout'  => 0.5,
+    
+        $client = new \GuzzleHttp\Client();
+        $response = $client->request('POST', 'http://127.0.0.1:8080/file', [
+            'multipart' => [
+                [
+                    'name' => 'file',
+                    'contents' => fopen($event->song->song_file, 'r'),
+                    'filename'=>'custom_filename.txt'
+                ],
+            ],
         ]);
-        
-        // dd($client);
-        try {
-          $body = fopen('http://127.0.0.1:8000/songs//changes_1_songs////songs//Rostam_Kibamia.txt', 'r');
-          $r =  $client->post('http://127.0.0.1:8080/file', ['file' => $body]);    
 
-        }
-        catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-        }
-        catch (Exception $e) {
-            return $e;
-        }
+        $respond = json_decode((string) $response->getBody(), true);
+        $store_abs = Abusive::create([
+            'song_id' => $event->song->id,
+            'abusive_word' => serialize(explode(',' ,$respond[0]['abusive_words'])),
+            'no_words' => $respond[0]['Total_abusive']
+        ]);
+        return $store_abs;
 
 
-        return response()->json(["results" => $r]);
       
     }
 }

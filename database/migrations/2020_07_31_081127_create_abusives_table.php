@@ -16,7 +16,7 @@ class CreateAbusivesTable extends Migration
         Schema::create('abusives', function (Blueprint $table) {
             $table->id();
             $table->Integer('song_id');
-            $table->String('abusive_word');
+            $table->text('abusive_word');
             $table->String('no_words');
             $table->timestamps();
         });
