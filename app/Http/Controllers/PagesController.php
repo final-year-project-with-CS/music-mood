@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Song;
 use App\Album;
 use App\Artist;
+use App\Abusive;
 
 use Illuminate\Http\Request;
 
@@ -22,6 +23,10 @@ class PagesController extends Controller
     public function artists(){
         $artists = Artist::all();
         return view('pages.artist', ['artists' => $artists]);
+    }
+    public function profile(){
+        $artists = Abusive::all();
+        return view('pages.profile', ['artist' => $artists]);
     }
  
 }

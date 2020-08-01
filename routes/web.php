@@ -88,6 +88,8 @@ Route::post('/storeArtist', ['uses' => 'ArtistController@postArtist']);
 Route::post('/updateArtist', ['uses' => 'ArtistController@updateRequest']);
 
 
+//profile
+Route::get('/profile', ['uses' => 'PagesController@profile']);
 
 Route::get('/upload', function () {
     return view('pages.upload');
@@ -108,9 +110,7 @@ Route::get('/verifySong', function () {
 Route::get('/notify', function () {
     return view('pages.notify');
 });
-Route::get('/profile', function () {
-    return view('pages.profile');
-});
+
 Route::get('/editprofile', function () {
     return view('pages.editprofile');
 });

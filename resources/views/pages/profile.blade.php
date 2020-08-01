@@ -182,24 +182,42 @@
               </div>
               <div class="modal-body">
                   <div class="row">
-                      <div class="col-sm-6">
-                          <ul>
-                              <li>sex</li>
-                              <li>fuck</li>
-                              <li>nyege</li>
-                              <li>widh</li>
-                              <li>green</li>    
-                              </ul>   
+                      <div class="col-sm-12">
+                        <p>Dear Anord Your song  father of 4 appear to have the following abusive words which are illegal according to our country make sure  
+                          you change it with meaningful words
+                        </p>
+                        
                       </div>
-                      <div class="col-sm-6">
-                          <ul>
-                              <li>sex</li>
-                              <li>fuck</li>
-                              <li>nyege</li>
-                              <li>widh</li>
-                              <li>green</li>    
-                              </ul>   
-                      </div>
+               
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <ul>
+                        <li>sex</li>
+                        <li>fuck</li>
+                        <li>nyege</li>
+                        <li>widh</li>
+                        <li>green</li>    
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                      <ul>
+                        <li>sex</li>
+                        <li>fuck</li>
+                        <li>nyege</li>
+                        <li>widh</li>
+                        <li>green</li>    
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                      <ul>
+                        <li>sex</li>
+                        <li>fuck</li>
+                        <li>nyege</li>
+                        <li>widh</li>
+                        <li>green</li>    
+                        </ul>
+                    </div>
                   </div>
               </div>
   
