@@ -6,6 +6,14 @@
        ul {
            list-style: none
        }
+       .style {
+         font-size: 15px;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+       }
+       .abusive ul li{
+        float: left;
+       }
    </style>
 @endsection
 
@@ -41,15 +49,15 @@
         @role('Listener')
         <div class="header-links">
           <ul class="links d-flex align-items-center mt-3 mt-md-0">
-            <li class="header-link-item d-flex align-items-center active">
+            {{-- <li class="header-link-item d-flex align-items-center active">
               <i class="mr-1 icon-md" data-feather="upload"></i>
               <a class="pt-1px d-none d-md-block" href="#uploadCollapse" data-toggle="collapse" aria-expanded="false" aria-control="uploadCollapse" >Songs Accepted</a>
-            </li>
+            </li> --}}
            
             <li class="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
               <i class="mr-1 icon-md" data-feather="disc"></i>
               <a class="pt-1px d-none d-md-block" href="#albumCollapse" data-toggle="collapse" aria-expanded="false"
-              aria-controls="albumCollapse">Songs Rejected</a>
+              aria-controls="albumCollapse">Songs Uploaded</a>
             </li>
             
           </ul>
@@ -62,7 +70,7 @@
 
     
       <div class="row">
-        <div class="col-lg-6">
+        {{-- <div class="col-lg-6">
           <div class="card card-body collapse" id="uploadCollapse">
             <table class="table table-hover">
               <thead>
@@ -84,7 +92,7 @@
               </thead>
             </table>
           </div>
-        </div>
+        </div> --}}
         <!-- Artist modal -->
 <div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="requestModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -171,82 +179,73 @@
 
 
         <!-- abusive words modal -->
+        @if(count($abusives) > 0)
         <div class="modal fade" id="abusiveModal" tabindex="-1" role="dialog" aria-labelledby="abusiveModal" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-top" role="document">
+          <div class="modal-dialog modal-dialog-top modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Abusive Words</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Notification</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
+                
                   <div class="row">
                       <div class="col-sm-12">
-                        <p>Dear Anord Your song  father of 4 appear to have the following abusive words which are illegal according to our country make sure  
-                          you change it with meaningful words
+                        <p class="style">Dear <span class="profile-name" style="color: green">{{ Auth::user()->name }}</span>
+                          Your song  appear to have the following abusive words which are illegal according to our country make sure  
+                          you change it with meaningful words. so it will be not approved till further notes
                         </p>
+                        <br>
                         
                       </div>
                
                   </div>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <ul>
-                        <li>sex</li>
-                        <li>fuck</li>
-                        <li>nyege</li>
-                        <li>widh</li>
-                        <li>green</li>    
-                        </ul>
-                    </div>
-                    <div class="col-sm-4">
-                      <ul>
-                        <li>sex</li>
-                        <li>fuck</li>
-                        <li>nyege</li>
-                        <li>widh</li>
-                        <li>green</li>    
-                        </ul>
-                    </div>
-                    <div class="col-sm-4">
-                      <ul>
-                        <li>sex</li>
-                        <li>fuck</li>
-                        <li>nyege</li>
-                        <li>widh</li>
-                        <li>green</li>    
-                        </ul>
-                    </div>
-                  </div>
+                    
+                    @foreach ($abusives as $abusive)
+                        <p> {{ $abusive->abusive_word }}
+                        </p>                    
+                        @endforeach
+                
               </div>
-  
-        
+            
             </div>
           </div>
         </div>
- {{--album collapse--}}
-        <div class="col-lg-6">
+
+        @else
+        <p>no abusive</p>
+  @endif
+ {{--song collapse--}}
+ @if(count($songs) > 0)
+        <div class="col-sm-12">
           <div class="card card-body collapse" id="albumCollapse">
-           <table class="table table-hover">
-             <thead>
-               <tr>
-                 <th>#</th>
-                 <th>Songs</th>
-                 <th>Abusive</th>
-                 <th>Status</th>
-               </tr>
-               <tr>
-                 <td>1</td>
-                 <td>Father Of 4</td>
-                 <td><button class="open-RequestDialog btn btn-block btn-danger-muted" data-toggle="modal" data-id="" data-target="#abusiveModal">Abusives</button>
-                 <td><button class="btn btn-block btn-danger">Rejected</button>
-                 </tr>
-               
-            
-             </thead>
-           </table>
+
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Songs</th>
+                  <th>Genre</th>
+                  <th>Status</th>
+                </tr>
+                @foreach ($songs as $song)
+                <tr>
+              <td>{{ $song->id }}</td>
+              <td>{{ $song->name }}</td>
+              <td>{{ $song->genre }}</td>
+                <td><button class="open-RequestDialog btn btn-block btn-danger-muted" data-toggle="modal" data-id="{{ $song->id }}"
+                   data-target="#abusiveModal">{{ $song->status }}</button>
+                </tr>
+                @endforeach
+            </thead>
+          </table>
+
           </div>
+          @else 
+          <p>no songs</p>
+          @endif 
         </div>
 
       </div>

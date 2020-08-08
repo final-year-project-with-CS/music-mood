@@ -84,6 +84,7 @@ input {
      <div class="row">
      <div class="col-lg-10">
                 <div class="form-group">
+                    <input type="text" id="songId" name="songId" hidden>
                         <label for="album">Album</label>
                         <select class=" dropdown-toggle" id="inputGroupSelect04" name="album_id">
                           <option selected>Choose Album</option>

@@ -24,9 +24,21 @@ class PagesController extends Controller
         $artists = Artist::all();
         return view('pages.artist', ['artists' => $artists]);
     }
-    public function profile(){
-        $artists = Abusive::all();
-        return view('pages.profile', ['artist' => $artists]);
+
+    public function verifySong(){
+        $songs = Song::all();
+        $abusives = Abusive::all();
+        return view('pages.verify_song', [
+            'songs' => $songs,
+            'abusives' => $abusives
+            ]);
     }
- 
+   
+   
+    public function show($id)
+    {
+        $abusives = Abusive::query()->where('song_id', $id)->get();
+
+        return $abusives;
+    }
 }

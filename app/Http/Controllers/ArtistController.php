@@ -60,8 +60,7 @@ class ArtistController extends Controller
       }
                 
       
-      // $artist->status = $request->input('request');
-      $artist->update([
+       $artist->update([
         'status' => $request->input('request')
         ]);
 

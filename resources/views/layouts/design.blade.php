@@ -101,7 +101,7 @@
         </li>
         <li class="nav-item ">
             <a href="/album" class="nav-link">
-                <i class="link-icon" data-feather="music"></i>
+              <i class="link-icon" data-feather="disc"></i>
                 <span class="link-title">Albums</span>
 
             </a>
@@ -189,14 +189,23 @@
     </form>
     <ul class="navbar-nav">
       {{-- messege at navbar  --}}
-      <li class="nav-item dropdown nav-notifications">
-        {{-- <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      @role('Listener')
+      <li class="nav-item dropdown nav-notifications mr-3">
+        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i data-feather="bell"></i>
           <div class="indicator">
-            <div class="circle"></div>
+            <div class="circle">
+            </div>
           </div>
-        </a> --}}
-
+        </a>
+        <div class="dropdown-menu" aria-labelledby="notificationDropdown">
+          <div class="dropdown-body">
+          Dear <span class="profile-name" style="color: green">{{ Auth::user()->name }}</span>
+          You appear to have illegal words in your uploaded songs
+          </div>
+        </div>
+      </li>
+      @endrole
       <li class="nav-item dropdown nav-profile">
         <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img src="assets\images\faces\face1.jpg" alt="profile">

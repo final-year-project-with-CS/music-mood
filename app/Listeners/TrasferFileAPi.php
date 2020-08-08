@@ -46,10 +46,14 @@ class TrasferFileAPi
         $respond = json_decode((string) $response->getBody(), true);
         $store_abs = Abusive::create([
             'song_id' => $event->song->id,
+            'song_name' => $event->song->name,
             'abusive_word' => serialize(explode(',' ,$respond[0]['abusive_words'])),
-            'no_words' => $respond[0]['Total_abusive']
+            'no_words' => $respond[0]['Total_abusive'],
+            'status' => 'pending'
         ]);
         return $store_abs;
+
+        
 
 
       

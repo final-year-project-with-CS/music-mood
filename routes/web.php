@@ -50,9 +50,6 @@ Route::get('/recentlyadded', function () {
 
 
 
-// Route::get('/artist', function () {
-//     return view('pages.artist');
-// });
 
 
 //songs
@@ -60,6 +57,7 @@ Route::get('/song', ['uses' => 'SongController@getAllsongs']);
 Route::get('songView/{songId}', ['uses' => 'SongController@getSong']);
 Route::post('storeSong/{albumId}', ['uses' => 'SongController@postSong']);
 Route::delete('deleteSong/{songId}' ,['uses' => 'SongController@deleteSong']);
+Route::post('updateSong' ,['uses' => 'SongController@updateSong']);
 
 //album form
 Route::get('/song_form', function () { 
@@ -89,7 +87,12 @@ Route::post('/updateArtist', ['uses' => 'ArtistController@updateRequest']);
 
 
 //profile
-Route::get('/profile', ['uses' => 'PagesController@profile']);
+Route::get('/profile', ['uses' => 'ProfileController@profile']);
+
+
+//verify song
+Route::get('/verifySong', ['uses' => 'PagesController@verifySong']);
+
 
 Route::get('/upload', function () {
     return view('pages.upload');
@@ -103,9 +106,9 @@ Route::get('/claimpayment', function () {
     return view('pages.claimpayment');
 });
 
-Route::get('/verifySong', function () {
-    return view('pages.verify_song');
-});
+// Route::get('/verifySong', function () {
+//     return view('pages.verify_song');
+// });
 
 Route::get('/notify', function () {
     return view('pages.notify');

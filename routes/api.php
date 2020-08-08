@@ -50,3 +50,5 @@ Route::get('roles', 'RoleController@index');
 //organization route
 Route::get('organizations', 'OrganizationController@index');
 
+Route::post('abusives/{id}', 'PagesController@show');
+

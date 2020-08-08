@@ -20,4 +20,7 @@ class Song extends Model
     public function album() {
         return $this->belongsTo(Album::class);
     }
+    public function abusive() {
+        return $this->hasOne(Abusive::class);
+    }
 }
