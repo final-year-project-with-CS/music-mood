@@ -88,17 +88,16 @@ class SongController extends Controller
  public function updateSong(Request $request)
  {
       $validator = Validator::make($request->all(),[
-          'status'  =>  'required'
+          'request'  =>  'required'
       ]);
 
       $song  = Song::find($request->input('songId'));
       
                 
-      
+    //   dd($song);
        $song->update([
         'status' => $request->input('request')
         ]);
-
       return back();
 
  }

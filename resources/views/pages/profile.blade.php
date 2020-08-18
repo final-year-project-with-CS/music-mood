@@ -219,18 +219,8 @@
            
           {{-- <textarea ></textarea> --}}
 
-         <textarea name="" cols="103" id="_abusiveWords" style="background-color: #070d19; color: white" rows="10"></textarea>
-         <br>
-          <div class="form-group">
-            <select class=" dropdown-toggle btn btn-block btn-danger" id="requestId" name="request">
-              <option selected>requested</option>
-              <option value="approved">approve</option>
-              <option value="pending">pending</option>
-              <option value="rejected">reject</option>
-            </select>
-          </div>
-          
-          
+         <textarea name="" cols="115" id="_abusiveWords" class="_abusiveWords" style="background-color: #070d19; color: white" rows="20"></textarea>
+         <br><br>         
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Send</button>
@@ -279,16 +269,21 @@
       
     
 </div>
+
+<p id="hello"></p>
 @endsection
 <script>
   
   let abusiveWords = '';
 
-var p = document.querySelector('#_abusiveWords');
+
 
 function updateStatus(id) {
+
+  var p = document.getElementById('_abusiveWords');
   
   p.innerHTML = '';
+
 
    const songId = id;
 

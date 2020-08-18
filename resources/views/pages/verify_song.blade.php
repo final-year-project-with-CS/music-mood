@@ -63,7 +63,7 @@
             <div class="modal-body">
             <form action="updateSong" method="POST">
                 @csrf 
-            {{-- <input type="text" id="songId" name="songId" value="{{ $song->id }}" hidden> --}}
+            <input type="text" id="songId" name="songId" value="{{ $song->id }}" hidden>
                 <p class="lead">
                   This song appear to have abusive words which is illegal according to our country culture
                 </p>
