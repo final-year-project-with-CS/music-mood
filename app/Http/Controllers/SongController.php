@@ -119,13 +119,13 @@ class SongController extends Controller
     public function deleteSong($songId)
     {
 
-        $song = Song::find($songId);
-
-        if (!$song) {
+        $audio = Song::find($songId);
+        dd($audio);
+        if (!$audio) {
             return back()->with('error', 'Song deleted');
         }
 
-        $song->delete();
-        return redirect('pages.song', ['songs' => $song]);
+        $audio->delete();
+        return redirect('pages.songView', ['audio' => $audio]);
     }
 }

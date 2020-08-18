@@ -34,7 +34,8 @@
       <td>50%</td>
       <td>{{ $song->genre }}</td>
       {{-- @foreach ($abusives as $abusive) --}} 
-     <td><button class="open-RequestDialog btn btn-block btn-danger-muted" id="song_{{ $song->id }}" data-toggle="modal" data-id="{{ $song->id }}" 
+     <td>
+       <button class="open-RequestDialog btn btn-block btn-danger-muted" id="song_{{ $song->id }}" data-toggle="modal" data-id="{{ $song->id }}" 
       data-target="#requestModal" onclick="updateStatus('{{ $song->id }}')">{{ $song->status }}</button>
       </td>
       {{-- @endforeach --}}
@@ -62,15 +63,16 @@
             <div class="modal-body">
             <form action="updateSong" method="POST">
                 @csrf 
-            <input type="text" id="songId" name="songId" value="{{ $song->id }}" hidden>
+            {{-- <input type="text" id="songId" name="songId" value="{{ $song->id }}" hidden> --}}
                 <p class="lead">
                   This song appear to have abusive words which is illegal according to our country culture
                 </p>
                 <br>
                
-              <p id="_abusiveWords"></p>
-             
-              {{-- <input type="text" id="artistId" name="artistId" hidden> --}}
+              {{-- <textarea ></textarea> --}}
+
+             <textarea name="" cols="103" id="_abusiveWords" style="background-color: #070d19; color: white" rows="10"></textarea>
+             <br>
               <div class="form-group">
                 <select class=" dropdown-toggle btn btn-block btn-danger" id="requestId" name="request">
                   <option selected>requested</option>
@@ -122,7 +124,7 @@ function updateStatus(id) {
    const requestData = {
      song_id: songId
    }
-
+console.log(requestData)
   fetch(`http://localhost:8000/api/abusives/${songId}`, {
      method: 'POST',
      headers: {

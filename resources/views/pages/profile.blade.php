@@ -70,29 +70,7 @@
 
     
       <div class="row">
-        {{-- <div class="col-lg-6">
-          <div class="card card-body collapse" id="uploadCollapse">
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Songs</th>
-                  <th>Genre</th>
-                  <th>status</th>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>utaipenda</td>
-                  <td>Trap</td>
-
-                  <td><button class="btn btn-block btn-primary">Approved</button>
-                  </tr>
-               
-             
-              </thead>
-            </table>
-          </div>
-        </div> --}}
+   
         <!-- Artist modal -->
 <div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="requestModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -179,7 +157,7 @@
 
 
         <!-- abusive words modal -->
-        @if(count($abusives) > 0)
+        {{-- @if(count($abusives) > 0)
         <div class="modal fade" id="abusiveModal" tabindex="-1" role="dialog" aria-labelledby="abusiveModal" aria-hidden="true">
           <div class="modal-dialog modal-dialog-top modal-lg" role="document">
             <div class="modal-content">
@@ -203,11 +181,12 @@
                
                   </div>
                     
-                    @foreach ($abusives as $abusive)
-                        <p> {{ $abusive->abusive_word }}
-                        </p>                    
-                        @endforeach
-                
+                    {{-- @foreach ($abusives as $abusive) --}}
+                    {{-- <p id="_abusiveWords"></p> --}}
+                    {{-- <textarea name="" cols="118" id="_abusiveWords" style="background-color: #070d19; color: white" rows="10"></textarea> --}}
+                  </p>                    
+                        {{-- @endforeach --}}
+{{--                 
               </div>
             
             </div>
@@ -216,8 +195,53 @@
 
         @else
         <p>no abusive</p>
-  @endif
+  @endif  --}}
  {{--song collapse--}}
+  <!-- Artist modal -->
+  @foreach ($abusives as $abusive)
+  <div class="modal fade" id="abusiveModal" tabindex="-1" role="dialog" aria-labelledby="requestModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Song Request</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <form action="updateSong" method="POST">
+            @csrf 
+        {{-- <input type="text" id="songId" name="songId" value="{{ $song->id }}" hidden> --}}
+            <p class="lead">
+              This song appear to have abusive words which is illegal according to our country culture
+            </p>
+            <br>
+           
+          {{-- <textarea ></textarea> --}}
+
+         <textarea name="" cols="103" id="_abusiveWords" style="background-color: #070d19; color: white" rows="10"></textarea>
+         <br>
+          <div class="form-group">
+            <select class=" dropdown-toggle btn btn-block btn-danger" id="requestId" name="request">
+              <option selected>requested</option>
+              <option value="approved">approve</option>
+              <option value="pending">pending</option>
+              <option value="rejected">reject</option>
+            </select>
+          </div>
+          
+          
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+@endforeach
  @if(count($songs) > 0)
         <div class="col-sm-12">
           <div class="card card-body collapse" id="albumCollapse">
@@ -235,9 +259,10 @@
               <td>{{ $song->id }}</td>
               <td>{{ $song->name }}</td>
               <td>{{ $song->genre }}</td>
-                <td><button class="open-RequestDialog btn btn-block btn-danger-muted" data-toggle="modal" data-id="{{ $song->id }}"
-                   data-target="#abusiveModal">{{ $song->status }}</button>
-                </tr>
+              <td>
+                <button class="open-RequestDialog btn btn-block btn-danger-muted" id="song_{{ $song->id }}" data-toggle="modal" data-id="{{ $song->id }}" 
+               data-target="#abusiveModal" onclick="updateStatus('{{ $song->id }}')">{{ $song->status }}</button>
+               </td>
                 @endforeach
             </thead>
           </table>
@@ -255,5 +280,39 @@
     
 </div>
 @endsection
+<script>
+  
+  let abusiveWords = '';
+
+var p = document.querySelector('#_abusiveWords');
+
+function updateStatus(id) {
+  
+  p.innerHTML = '';
+
+   const songId = id;
+
+   const requestData = {
+     song_id: songId
+   }
+   console.log(requestData)
+  fetch(`http://localhost:8000/api/abusives/${songId}`, {
+     method: 'POST',
+     headers: {
+      "Content-Type": "text/plain;charset=UTF-8"
+     },
+     body: JSON.stringify(requestData)
+   }).
+   then(response => {
+    return response.json()
+   })
+   .then(json => {
+     p.innerHTML = json[0].abusive_word
+   })
+   .catch(error => {
+     console.log(error)
+   })
+}
+</script>
 
 @section('scripts')

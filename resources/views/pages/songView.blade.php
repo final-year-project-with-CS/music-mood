@@ -34,9 +34,17 @@
              {{-- <h3 class="display-4 mt-1 text-success  "><b>mp3</b></h3> --}}
                     <h6 class="display-6 text-secondary mt-1">Release Date:  <i>{{ $song->created_at }}</i></h6>
             <p class="text-muted mt-1">#{{ $song->genre }}</p>  
+            <br> <br> <br>
+             {{-- <form @if($audio) action="deleteSong/{{ $audio->id }}" @endif>
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-block" type="submit" style="color: darkred"><i data-feather="trash" class="icon-sm mr-2"></i> <span class="">Destroy </span></button>
+            </form> --}}
+
               </div>     
        </div>
    </div>
+   
   </div>
 
   
@@ -47,26 +55,6 @@
         
 </div>
 
-{{-- 
-<div class="row mt-5">
-  <div class="col-lg-8">
-    <div class="player">
-      <img src="{{ asset('assets/images/pics/yl.webp') }}" height="30px" width="30px" alt="">
-      <div class="info">
-        <div class="name">rockstar</div>
-        <div class="singer">Roddy rich</div>
-        <div class="btns">
-           <div class="iconfont play-pause icon-player"></div>
-           <div class="iconfont next icon-next"></div>
-        </div>
-        <div class="progress">
-
-        </div>
-   
-  </div>
-    </div>
-  </div>
-</div> --}}
 
 
 
