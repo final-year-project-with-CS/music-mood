@@ -47,7 +47,7 @@ class TrasferFileAPi
         $store_abs = Abusive::create([
             'song_id' => $event->song->id,
             'song_name' => $event->song->name,
-            'abusive_word' => serialize(explode(',' ,$respond[0]['abusive_words'])),
+            'abusive_word' => $respond[0]['abusive_words'],//serialize(explode(',' ,$respond[0]['abusive_words'])),
             'no_words' => $respond[0]['Total_abusive'],
             'status' => 'pending'
         ]);

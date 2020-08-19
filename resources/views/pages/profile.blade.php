@@ -28,7 +28,7 @@
           </figure>
           <div class="cover-body d-flex justify-content-between align-items-center">
             <div>
-              <img class="profile-pic" src="..\assets\images\faces\face1.jpg" alt="profile">
+              <img class="profile-pic" src="..\assets\images\pics\d1.jpeg" alt="profile">
               <span class="profile-name">{{ Auth::user()->name }}</span>
             </div>
             @role('Listener')
@@ -212,18 +212,18 @@
         <form action="updateSong" method="POST">
             @csrf 
         {{-- <input type="text" id="songId" name="songId" value="{{ $song->id }}" hidden> --}}
-            <p class="lead">
-              This song appear to have abusive words which is illegal according to our country culture
+        <p class="style">Dear <span class="profile-name" style="color: green">{{ Auth::user()->name }}</span>
+          Your song  appear to have the following abusive words which are illegal according to our country make sure  
+          you change it with meaningful words. so it will be not approved till further notes
             </p>
             <br>
            
           {{-- <textarea ></textarea> --}}
 
-         <textarea name="" cols="115" id="_abusiveWords" class="_abusiveWords" style="background-color: #070d19; color: white" rows="20"></textarea>
-         <br><br>         
+         <textarea name="" cols="115" id="_abusiveWords" class="_abusiveWords" style="background-color: #070d19; color: white" rows="10"></textarea>
+                  
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Send</button>
         </div>
       </form>
       
